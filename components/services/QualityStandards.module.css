@@ -1,0 +1,211 @@
+.wrapper {
+  background-color: var(--color-light-cream);
+}
+
+.grid {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+
+}
+
+.backgroundPattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 4rem;
+  align-items: flex-start;
+}
+
+.header {
+  margin-bottom: 2rem;
+  max-width: 500px;
+  position: sticky;
+  top: 8rem;
+}
+
+.heading {
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  line-height: 1.15;
+  margin-top: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.description {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  opacity: 0.75;
+}
+
+.standardCard {
+  background-color: var(--color-soft-beige);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: 2.5rem;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.standardCard:hover {
+  border-color: var(--color-brand-mustard);
+}
+
+/* Header */
+.cardHeader {
+  position: relative;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.cardWatermark {
+  position: absolute;
+  top: -30%;
+  right: -20%;
+  width: 50%;
+  height: auto;
+  opacity: 0.06;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.cardTitle {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.cardSubtitle {
+  font-size: 0.95rem;
+  opacity: 0.65;
+  color: var(--color-dark-olive);
+  position: relative;
+  z-index: 1;
+}
+
+/* Sections */
+.cardSection {
+  margin-bottom: 1.75rem;
+}
+
+.cardSection:last-child {
+  margin-bottom: 0;
+}
+
+.sectionLabel {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--color-muted-green);
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.goalText {
+  font-size: 1rem;
+  line-height: 1.6;
+  opacity: 0.8;
+  margin: 0;
+}
+
+/* Included List */
+.includedList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.includedItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--color-dark-olive);
+  opacity: 0.8;
+}
+
+.dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: var(--color-brand-green);
+  flex-shrink: 0;
+}
+
+/* Steps */
+.stepsRow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.stepNumber {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-brand-mustard);
+  opacity: 0.5;
+}
+
+.stepText {
+  font-size: 0.85rem;
+  color: var(--color-dark-olive);
+  opacity: 0.75;
+  line-height: 1.3;
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+  .gridContainer {
+    grid-template-columns: 1fr;
+  }
+
+  .header {
+    position: static;
+  }
+}
+
+@media (min-width: 900px) {
+  .grid {
+    border-left: 2px solid #6e1c241c;
+    border-right: 2px solid #6e1c241c;
+    padding: 20px;
+    /* border-radius: 1rem; */
+  }
+}
+
+@media (max-width: 768px) {
+  .standardCard {
+    padding: 2rem;
+  }
+
+  .stepsRow {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

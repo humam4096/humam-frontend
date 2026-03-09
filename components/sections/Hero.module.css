@@ -1,0 +1,163 @@
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: calc(100dvh - 6rem);
+  padding: 0 1.5rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.heroWrapper {
+  position: relative;
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 3rem;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  background-image: url('https://media.istockphoto.com/id/1388791611/photo/teppanyaki-style.jpg?s=612x612&w=0&k=20&c=gNhQXH4awScPV_ZR3GHXm6PKnz4HtjBS8Y5Oqb3Cs50=');
+  background-size: cover;
+  background-position: center;
+  /* Strong brand burgundy base */
+
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.brandWatermark {
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: 120vh;
+  height: 120vh;
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 1;
+}
+
+[dir="rtl"] .brandWatermark {
+  right: auto;
+  left: -10%;
+}
+
+.heroWrapper::before {
+  content: '';
+  position: absolute;
+  top: -15%;
+  right: -10%;
+  width: 70%;
+  height: 130%;
+  background-image: url('/patterns/pattern-03.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: 1;
+  mix-blend-mode: luminosity;
+}
+
+[dir="rtl"] .heroWrapper::before {
+  right: auto;
+  left: -10%;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(4, 75, 41, 0.551), var(--color-brand-dark));
+  z-index: 2;
+}
+
+.content {
+  position: relative;
+  z-index: 10;
+  max-width: 85ch;
+  /* Match ZeroDrift character clamp */
+  text-align: start;
+  /* ZeroDrift aligns text to the start within the hero */
+  color: var(--color-light-cream);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.buttons {
+  position: relative;
+  z-index: 10;
+  max-width: 100vw;
+  /* Match ZeroDrift character clamp */
+  text-align: start;
+  /* ZeroDrift aligns text to the start within the hero */
+  color: var(--color-light-cream);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.badge {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  opacity: 0.8;
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 8vw, 6rem);
+  /* 96px target */
+  line-height: 1.0;
+  /* Tight ZeroDrift line height */
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  margin: 0;
+  color: white;
+}
+
+.subtitle {
+  display: none;
+  /* Removed to match ZeroDrift structure which uses Badge + Title + Desc */
+}
+
+.description {
+  font-size: 1.125rem;
+  line-height: 1.4;
+  opacity: 0.85;
+  max-width: 60ch;
+  margin: 0;
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 0 1rem 1rem 1rem;
+  }
+
+  .heroWrapper {
+    padding: 2rem;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+}

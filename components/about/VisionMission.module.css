@@ -1,0 +1,118 @@
+.wrapper {
+  margin: 0 2rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.block {
+  padding: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.cardContent {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.cardWatermark {
+  position: absolute;
+  bottom: -20%;
+  right: -15%;
+  width: 55%;
+  height: auto;
+  opacity: 0.06;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.cardWatermarkMission {
+  position: absolute;
+  top: -10%;
+  right: -10%;
+  width: 45%;
+  height: 120%;
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.blockMission {
+  background-color: var(--color-brand-dark-olive);
+  color: var(--color-light-cream);
+}
+
+.blockMission::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 100%;
+  background-image: url('/patterns/pattern-vertical-tiles.png');
+  background-size: contain;
+  background-repeat: repeat-y;
+  background-position: center;
+  opacity: 0.08;
+  pointer-events: none;
+  z-index: 1;
+  mix-blend-mode: soft-light;
+}
+
+[dir="rtl"] .blockMission::before {
+  right: auto;
+  left: 0;
+}
+
+.blockMission .blockTitle,
+.blockMission .blockDesc {
+  color: var(--color-light-cream);
+}
+
+.blockMission .blockDesc {
+  opacity: 0.8;
+}
+
+.blockTitle {
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.blockDesc {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  opacity: 0.8;
+  max-width: 50ch;
+}
+
+/* @media (min-width: 992px) {
+  .wrapper {
+    background-color: rgba(255, 255, 255, 0.649);
+    border-radius: var(--border-radius);
+  }
+} */
+
+@media (max-width: 768px) {
+  .wrapper {
+    margin: 0 1rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .block {
+    padding: 2.5rem;
+  }
+}

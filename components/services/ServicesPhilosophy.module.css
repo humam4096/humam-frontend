@@ -1,0 +1,81 @@
+.wrapper {
+  background-color: var(--color-light-cream);
+  position: relative;
+  overflow: clip;
+}
+
+.wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 80px;
+  height: 100%;
+  background-image: url('/patterns/pattern-vertical-petals.png');
+  background-size: contain;
+  background-repeat: repeat-y;
+  background-position: center;
+  opacity: 0.06;
+  pointer-events: none;
+  z-index: 0;
+}
+
+[dir="rtl"] .wrapper::before {
+  right: auto;
+  left: 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+.left {
+  position: sticky;
+  top: 8rem;
+}
+
+.heading {
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  line-height: 1.15;
+  margin-top: 0.5rem;
+}
+
+.accentLine {
+  width: 60px;
+  height: 2px;
+  background-color: var(--color-brand-mustard);
+  margin-top: 2rem;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.paragraph {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  opacity: 0.85;
+  color: var(--color-dark-olive);
+}
+
+.paragraph:first-child {
+  font-size: 1.25rem;
+  opacity: 0.9;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .left {
+    position: static;
+  }
+}

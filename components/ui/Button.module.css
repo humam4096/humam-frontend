@@ -1,0 +1,59 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2.5rem;
+  border-radius: 99px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1.05rem;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  border: none;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.linkWrapper {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.primary {
+  background-color: var(--color-brand-red);
+  color: var(--color-brand-cream);
+  border: 1px solid var(--color-brand-red);
+}
+
+.primary:hover {
+  background-color: transparent;
+  color: var(--color-brand-red);
+  border-color: var(--color-brand-mustard);
+}
+
+.secondary {
+  background-color: transparent;
+  color: var(--color-brand-dark);
+  border: 1px solid rgba(0, 0, 0, 0.245);
+}
+
+.secondary:hover {
+  background-color: var(--color-brand-green);
+  color: var(--color-brand-cream);
+  border-color: var(--color-brand-green);
+}
+
+.outline {
+  background-color: transparent;
+  color: var(--color-brand-cream);
+  border: 1px solid rgba(247, 247, 239, 0.5);
+  backdrop-filter: blur(8px);
+}
+
+.outline:hover {
+  border-color: var(--color-brand-mustard);
+  color: var(--color-brand-mustard);
+  background-color: rgba(247, 247, 239, 0.1);
+}

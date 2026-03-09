@@ -1,0 +1,115 @@
+.sidebar {
+  width: 280px;
+  background-color: var(--color-soft-beige);
+  border-right: 1px solid var(--border-color);
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+[dir="rtl"] .sidebar {
+  border-right: none;
+  border-left: 1px solid var(--border-color);
+}
+
+.brand {
+  padding: 2rem;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand h2 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.roleBadge {
+  background-color: var(--color-muted-green);
+  color: var(--color-light-cream);
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 0.25rem 0.5rem;
+  border-radius: 99px;
+}
+
+.nav {
+  padding: 2rem 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.link {
+  display: block;
+  padding: 0.75rem 1rem;
+  border-radius: var(--border-radius);
+  color: var(--color-dark-olive);
+  font-weight: 500;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+.link:hover {
+  background-color: rgba(148, 163, 120, 0.1);
+  /* Muted Green 10% */
+  opacity: 1;
+}
+
+.active {
+  background-color: var(--color-dark-olive);
+  color: var(--color-light-cream);
+  opacity: 1;
+}
+
+.active:hover {
+  background-color: var(--color-dark-olive);
+}
+
+.footer {
+  padding: 1.5rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.userCard {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.avatar {
+  background-color: var(--color-dark-olive);
+  color: var(--color-light-cream);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.userInfo p {
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.logout {
+  font-size: 0.75rem !important;
+  color: var(--color-muted-green) !important;
+  cursor: pointer;
+  opacity: 0.8;
+  font-weight: 400 !important;
+}
+
+.logout:hover {
+  opacity: 1;
+  text-decoration: underline;
+}

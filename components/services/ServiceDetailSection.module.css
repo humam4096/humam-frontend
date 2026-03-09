@@ -1,0 +1,154 @@
+.wrapper {
+  background-color: var(--color-light-cream);
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 4rem;
+  align-items: flex-start;
+}
+
+.header {
+  margin-bottom: 2rem;
+  max-width: 500px;
+  position: sticky;
+  top: 8rem;
+}
+
+.heading {
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  line-height: 1.15;
+  margin-top: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.description {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  opacity: 0.75;
+}
+
+.backgroundPattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 0;
+}
+
+
+.scrollCol {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  /* background-color: rgba(255, 255, 255, 0.523); */
+
+  /* border-radius: 1rem; */
+}
+
+
+.detailCard {
+  width: 100%;
+  transform-origin: center center;
+  will-change: transform, opacity;
+  background-color: var(--color-soft-beige);
+  padding: 3rem;
+}
+
+.cardNumber {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  opacity: 0.2;
+  margin-bottom: 1.5rem;
+}
+
+.cardTitle {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.cardDesc {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  opacity: 0.8;
+  margin-bottom: 2rem;
+}
+
+/* Included Section */
+.includedSection {
+  border-top: 1px solid var(--border-color);
+  padding-top: 1.5rem;
+}
+
+.includedLabel {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--color-muted-green);
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.includedGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.includedItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  color: var(--color-dark-olive);
+  opacity: 0.8;
+}
+
+.includedDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+@media (max-width: 900px) {
+  .gridContainer {
+    grid-template-columns: 1fr;
+  }
+
+  .header {
+    position: static;
+  }
+}
+
+@media (min-width: 900px) {
+  .scrollCol {
+    border-left: 2px solid #6e1c241c;
+    border-right: 2px solid #6e1c241c;
+    padding: 20px;
+    /* border-radius: 1rem; */
+  }
+}
+
+@media (max-width: 768px) {
+  .detailCard {
+    padding: 2rem;
+  }
+
+  .includedGrid {
+    grid-template-columns: 1fr;
+  }
+  
+}

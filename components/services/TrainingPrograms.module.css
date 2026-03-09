@@ -1,0 +1,271 @@
+.wrapper {
+  background-color: var(--color-light-cream);
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 4rem;
+  align-items: flex-start;
+}
+
+.grid {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+}
+
+.backgroundPattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 0;
+}
+
+
+.header {
+  margin-bottom: 2rem;
+  max-width: 500px;
+  position: sticky;
+  top: 8rem;
+}
+
+.heading {
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  line-height: 1.15;
+  margin-top: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.description {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  opacity: 0.75;
+}
+.programCard {
+  background-color: var(--color-soft-beige);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: 2.5rem;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.programCard:hover {
+  border-color: var(--color-brand-mustard);
+}
+
+.cardWatermark {
+  position: absolute;
+  bottom: -25%;
+  right: -20%;
+  width: 50%;
+  height: auto;
+  opacity: 0.06;
+  pointer-events: none;
+  z-index: 0;
+  transition: opacity 0.4s ease;
+}
+
+.programCard:hover .cardWatermark {
+  opacity: 0.12;
+}
+
+.cardNumber {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-brand-mustard);
+  opacity: 0.2;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.cardTitle {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  position: relative;
+  z-index: 1;
+}
+
+.cardDesc {
+  font-size: 1rem;
+  line-height: 1.6;
+  opacity: 0.8;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 1;
+  flex: 1;
+}
+
+/* Outcomes */
+.outcomesSection {
+  border-top: 1px solid var(--border-color);
+  padding-top: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.outcomesLabel {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--color-muted-green);
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.outcomesGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+.outcomeItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--color-dark-olive);
+  opacity: 0.8;
+}
+
+.outcomeDot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: var(--color-brand-mustard);
+  flex-shrink: 0;
+}
+
+/* CTA Section */
+.ctaSection {
+  background-color: var(--color-brand-dark-olive);
+  margin: 2rem;
+  border-radius: var(--border-radius);
+  color: var(--color-light-cream);
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.ctaSection::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  right: -15%;
+  width: 60%;
+  height: 140%;
+  background-image: url('/patterns/pattern-03.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.06;
+  pointer-events: none;
+  z-index: 0;
+  mix-blend-mode: soft-light;
+}
+
+[dir="rtl"] .ctaSection::before {
+  right: auto;
+  left: -15%;
+}
+
+.ctaBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.ctaWatermark {
+  position: absolute;
+  top: -30%;
+  left: -10%;
+  height: 160vh;
+  width: auto;
+  opacity: 0.08;
+  pointer-events: none;
+}
+
+.ctaContent {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 4rem 0;
+}
+
+.ctaEyebrow {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  opacity: 0.7;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.ctaTitle {
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--color-light-cream);
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+}
+
+.ctaDesc {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  opacity: 0.75;
+  margin-bottom: 2.5rem;
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+  .gridContainer {
+    grid-template-columns: 1fr;
+  }
+
+  .header {
+    position: static;
+  }
+}
+
+@media (min-width: 900px) {
+  .grid {
+    border-left: 2px solid #6e1c241c;
+    border-right: 2px solid #6e1c241c;
+    padding: 20px;
+    /* border-radius: 1rem; */
+  }
+}
+
+@media (max-width: 768px) {
+  .programCard {
+    padding: 2rem;
+  }
+
+  .outcomesGrid {
+    grid-template-columns: 1fr;
+  }
+}
