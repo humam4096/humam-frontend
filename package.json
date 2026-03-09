@@ -6,9 +6,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "cf:build": "npx @opennextjs/cloudflare build",
+    "cf:deploy": "wrangler pages deploy .vercel/output/static"
   },
   "dependencies": {
+    "@opennextjs/cloudflare": "^1.17.1",
     "framer-motion": "^12.34.3",
     "next": "16.1.6",
     "next-intl": "^4.8.3",
@@ -21,6 +24,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
-    "typescript": "^5"
+    "typescript": "^5",
+    "wrangler": "^4.71.0"
   }
 }
