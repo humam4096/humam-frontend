@@ -1,3 +1,0 @@
-module.exports=[97332,99795,a=>{"use strict";let b=(0,a.i(717).cache)(function(){return{locale:void 0}});function c(){return b().locale}function d(a){b().locale=a}a.s(["getCachedRequestLocale",()=>c,"setCachedRequestLocale",()=>d],99795),a.s(["setRequestLocale",()=>d],97332)},71029,(a,b,c)=>{"use strict";c._=function(a){return a&&a.__esModule?a:{default:a}}},44839,a=>{a.v(b=>Promise.all(["server/chunks/ssr/messages_ar_json_2a006680._.js"].map(b=>a.l(b))).then(()=>b(70653)))},17741,a=>{a.v(b=>Promise.all(["server/chunks/ssr/messages_en_json_a7997480._.js"].map(b=>a.l(b))).then(()=>b(50929)))}];
-
-//# sourceMappingURL=_cdf6f2b2._.js.map
