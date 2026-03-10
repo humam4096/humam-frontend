@@ -5,6 +5,7 @@ import {BrandHalfCircle} from '@/components/brand/BrandHalfCircle';
 import {BrandClover} from '@/components/brand/BrandClover';
 import {Link} from '@/i18n/routing';
 import {notFound} from 'next/navigation';
+import Image from 'next/image';
 
 export type TeamMemberProps = {
   id: string;
@@ -14,6 +15,12 @@ const leaderBrandShapes: Record<string, React.ReactNode> = {
   atef: <BrandStar fillColor="var(--color-brand-dark)" />,
   enas: <BrandHalfCircle />,
   alaa: <BrandClover />,
+};
+
+const leaderImages: Record<string, string> = {
+  atef: '/images/team/Atif.webp',
+  enas: '/images/team/Enasu.webp',
+  alaa: '/images/team/allaa.webp',
 };
 
 // LinkedIn SVG Icon
@@ -48,16 +55,24 @@ export default function TeamMemberDetail({id}: TeamMemberProps) {
            <div className={styles.gridOverlay}></div>
            
            <div className={styles.content}>
-              {/* Photo Card Left Side */}
-              <div className={styles.photoColumn}>
-                 <div className={styles.imageCard}>
+             {/* Photo Card Left Side */}
+             <div className={styles.photoColumn}>
+                <div className={styles.imageCard}>
+                    {leaderImages[id] && (
+                      <Image
+                        src={leaderImages[id]}
+                        alt={t(`list.${id}.name`)}
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 40vw, 400px"
+                        priority
+                        className={styles.photo}
+                      />
+                    )}
                     {/* Fallback to brand shape placeholder */}
                     <div className={styles.placeholderShape}>
                       {leaderBrandShapes[id]}
                     </div>
-                    <div className={styles.imageInitial}>
-                      {t(`list.${id}.name`).charAt(0)}
-                    </div>
+
                  </div>
               </div>
 

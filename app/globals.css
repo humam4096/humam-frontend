@@ -47,7 +47,8 @@ body {
   background-color: var(--color-light-cream);
   color: var(--color-dark-olive);
   font-family: var(--font-body);
-  line-height: 1.6;
+  font-size: clamp(1.05rem, 1.2vw, 1.2rem);
+  /* line-height: 1.7; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -74,19 +75,45 @@ h6 {
 }
 
 h1 {
-  font-size: clamp(3rem, 6vw, 5.5rem);
+  font-size: clamp(3.5rem, 7vw, 6.25rem);
   letter-spacing: -0.03em;
   font-weight: 600;
 }
 
 h2 {
-  font-size: clamp(2.5rem, 4.5vw, 3.5rem);
+  font-size: clamp(2.75rem, 5vw, 4rem);
   letter-spacing: -0.02em;
   font-weight: 500;
 }
 
+h3 {
+  font-size: clamp(2.1rem, 3.6vw, 2.7rem);
+  letter-spacing: -0.015em;
+  font-weight: 500;
+}
+
+h4 {
+  font-size: clamp(1.7rem, 2.8vw, 2.1rem);
+  letter-spacing: -0.01em;
+  font-weight: 500;
+}
+
+h5 {
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  letter-spacing: 0;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+h6 {
+  font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
 p {
-  font-size: 1.125rem;
+  font-size: 1.25rem;
   opacity: 0.8;
   letter-spacing: -0.01em;
 }
@@ -127,7 +154,7 @@ p {
 .eyebrow {
   text-transform: uppercase;
   letter-spacing: 2px;
-  font-size: 0.8rem;
+  font-size: 0.95rem;
   font-weight: 700;
   color: var(--color-muted-green);
   display: block;

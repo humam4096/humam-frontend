@@ -48,9 +48,16 @@
 }
 
 .imagePlaceholder {
-  height: 300px;
+  height: 450px;
   background-color: rgba(62, 80, 58, 0.1);
   /* Light Dark Olive */
+  position: relative;
+  overflow: hidden;
+}
+
+.teamImage {
+  object-fit: cover;
+  object-position: top;
 }
 
 .info {
@@ -64,6 +71,8 @@
   font-size: 1.25rem;
   margin-bottom: 0.25rem;
 }
+
+
 
 .role {
   color: var(--color-muted-green);
