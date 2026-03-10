@@ -46,7 +46,7 @@ export default function Navbar() {
       <div className={`container ${styles.inner}`}>
         <Link href="/" className={styles.logo} onClick={() => setIsMenuOpen(false)}>
           <Image 
-            src="/images/brand/" 
+            src="/images/brand/Humam-Logo.svg" 
             // src="/images/brand/Humam-Logo-Short.svg" 
             alt="Logo" 
             width={100} 

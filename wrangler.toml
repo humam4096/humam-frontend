@@ -1,7 +1,0 @@
-name = "humam-frontend"
-compatibility_date = "2025-03-01"
-
-pages_build_output_dir = ".vercel/output/static"
-
-[vars]
-NODE_VERSION = "20"
