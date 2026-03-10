@@ -2,9 +2,11 @@ import {Link} from '@/i18n/routing';
 import styles from './Footer.module.css';
 import LanguageSwitcher from './LanguageSwitcher';
 import Image from 'next/image';
+import {useTranslations} from 'next-intl';
 
 export default function Footer() {
   const year = new Date().getFullYear();
+  const t = useTranslations('Footer');
 
   return (
     <footer className={styles.footer}>
@@ -14,42 +16,42 @@ export default function Footer() {
           <Link href="/" className={styles.logo}>
             <Image src="/images/brand/Humam-Logo.svg" alt="Logo" width={100} height={100} />
           </Link>
-            <p>Expert consultancy, structural planning, and quality assurance for the modern catering and food industry.</p>
+            <p>{t('tagline')}</p>
           </div>
           <div className={styles.contactInfo}>
-            <p>Makkah, Saudi Arabia</p>
+            <p>{t('location')}</p>
             <p className={styles.email}>info@humam.sa</p>
           </div>
         </div>
 
         <div className={styles.rightColumn}>
           <div className={styles.linkGroup}>
-            <h4>Company</h4>
+            <h4>{t('sections.company.title')}</h4>
             <ul>
-              <li><Link href="/about">About Us</Link></li>
-              <li><Link href="/services">Services</Link></li>
-              <li><Link href="/industries">Industries</Link></li>
-              <li><Link href="/experts">Our Experts</Link></li>
-              <li><Link href="/contact">Contact</Link></li>
+              <li><Link href="/about">{t('sections.company.about')}</Link></li>
+              <li><Link href="/services">{t('sections.company.services')}</Link></li>
+              <li><Link href="/industries">{t('sections.company.industries')}</Link></li>
+              <li><Link href="/experts">{t('sections.company.experts')}</Link></li>
+              <li><Link href="/contact">{t('sections.company.contact')}</Link></li>
             </ul>
           </div>
           
           <div className={styles.linkGroup}>
-            <h4>Expertise</h4>
+            <h4>{t('sections.expertise.title')}</h4>
             <ul>
-              <li><Link href="/services#development">Business Development</Link></li>
-              <li><Link href="/services#quality">Quality & Safety</Link></li>
-              <li><Link href="/services#training">Training</Link></li>
-              <li><Link href="/services#planning">Structural Planning</Link></li>
+              <li><Link href="/services#development">{t('sections.expertise.development')}</Link></li>
+              <li><Link href="/services#quality">{t('sections.expertise.quality')}</Link></li>
+              <li><Link href="/services#training">{t('sections.expertise.training')}</Link></li>
+              <li><Link href="/services#planning">{t('sections.expertise.planning')}</Link></li>
             </ul>
           </div>
 
           <div className={styles.linkGroup}>
-            <h4>Legal</h4>
+            <h4>{t('sections.legal.title')}</h4>
             <ul>
-              <li><Link href="/privacy">Privacy Policy</Link></li>
-              <li><Link href="/terms">Terms of Service</Link></li>
-              <li><Link href="/cookies">Cookie Policy</Link></li>
+              <li><Link href="/privacy">{t('sections.legal.privacy')}</Link></li>
+              <li><Link href="/terms">{t('sections.legal.terms')}</Link></li>
+              <li><Link href="/cookies">{t('sections.legal.cookies')}</Link></li>
             </ul>
           </div>
         </div>
@@ -58,7 +60,7 @@ export default function Footer() {
       <div className={`container`}>
         <div className={styles.bottomBar}>
           <div className={styles.bottomLinks}>
-            <p>&copy; {year} Humam Consulting. All rights reserved.</p>
+            <p>&copy; {year} {t('copyright')}</p>
             <LanguageSwitcher />
           </div>
 

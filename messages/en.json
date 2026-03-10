@@ -478,6 +478,34 @@
       }
     }
   },
+  "Footer": {
+    "tagline": "Expert consultancy, structural planning, and quality assurance for the modern catering and food industry.",
+    "location": "Makkah, Saudi Arabia",
+    "sections": {
+      "company": {
+        "title": "Company",
+        "about": "About Us",
+        "services": "Services",
+        "industries": "Industries",
+        "experts": "Our Experts",
+        "contact": "Contact"
+      },
+      "expertise": {
+        "title": "Expertise",
+        "development": "Business Development",
+        "quality": "Quality & Safety",
+        "training": "Training",
+        "planning": "Structural Planning"
+      },
+      "legal": {
+        "title": "Legal",
+        "privacy": "Privacy Policy",
+        "terms": "Terms of Service",
+        "cookies": "Cookie Policy"
+      }
+    },
+    "copyright": "Humam Consulting. All rights reserved."
+  },
   "TrainingCenterPage": {
     "badge": "Training Center",
     "title": "Humam Training Center",

@@ -93,13 +93,21 @@
 }
 
 .imagePlaceholder {
-  height: 320px;
+  height: 450px;
   background: linear-gradient(135deg, rgba(62, 80, 58, 0.08) 0%, rgba(62, 80, 58, 0.15) 100%);
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   overflow: hidden;
+}
+
+.photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .placeholderShape {

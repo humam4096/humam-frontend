@@ -8,6 +8,7 @@ import {BrandClover} from '@/components/brand/BrandClover';
 import {BrandTilePattern} from '@/components/brand/BrandTilePattern';
 import {Link} from '@/i18n/routing';
 import styles from './Leadership.module.css';
+import Image from 'next/image';
 
 const leaderKeys = ['atef', 'enas', 'alaa'] as const;
 
@@ -15,6 +16,12 @@ const leaderBrandShapes: Record<string, React.ReactNode> = {
   atef: <BrandStar fillColor="var(--color-brand-dark-olive)" />,
   enas: <BrandHalfCircle />,
   alaa: <BrandClover />,
+};
+
+const leaderImages: Record<string, string> = {
+  atef: '/images/team/Atif.webp',
+  enas: '/images/team/Enasu.webp',
+  alaa: '/images/team/allaa.webp',
 };
 
 export default function Leadership() {
@@ -68,9 +75,24 @@ export default function Leadership() {
           viewport={{once: true, margin: '-5%'}}
         >
           {leaderKeys.map((key) => (
-            <Link href={`/team/${key}`} key={key} style={{ display: 'block' }} aria-label={`View ${t(`leadership.list.${key}.name`)} profile`}>
+            <Link
+              href={`/team/${key}`}
+              key={key}
+              style={{display: 'block'}}
+              aria-label={`View ${t(`leadership.list.${key}.name`)} profile`}
+            >
               <motion.div variants={cardVariants} className={`card ${styles.leaderCard}`}>
                 <div className={styles.imagePlaceholder}>
+                  {leaderImages[key] && (
+                    <Image
+                      src={leaderImages[key]}
+                      alt={t(`leadership.list.${key}.name`)}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 320px"
+                      priority
+                      className={styles.photo}
+                    />
+                  )}
                   <div className={styles.placeholderShape}>
                     {leaderBrandShapes[key]}
                   </div>
