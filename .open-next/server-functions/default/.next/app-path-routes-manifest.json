@@ -1,0 +1,20 @@
+{
+  "/[locale]/[...rest]/page": "/[locale]/[...rest]",
+  "/[locale]/about/page": "/[locale]/about",
+  "/[locale]/contact/page": "/[locale]/contact",
+  "/[locale]/dashboard/admin/page": "/[locale]/dashboard/admin",
+  "/[locale]/dashboard/client/page": "/[locale]/dashboard/client",
+  "/[locale]/dashboard/page": "/[locale]/dashboard",
+  "/[locale]/page": "/[locale]",
+  "/[locale]/services/consultancy/page": "/[locale]/services/consultancy",
+  "/[locale]/services/page": "/[locale]/services",
+  "/[locale]/services/quality/page": "/[locale]/services/quality",
+  "/[locale]/services/training/page": "/[locale]/services/training",
+  "/[locale]/team/[id]/page": "/[locale]/team/[id]",
+  "/[locale]/training-center/page": "/[locale]/training-center",
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/favicon.ico/route": "/favicon.ico",
+  "/robots.txt/route": "/robots.txt",
+  "/sitemap.xml/route": "/sitemap.xml"
+}
