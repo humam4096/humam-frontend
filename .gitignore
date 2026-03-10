@@ -45,3 +45,6 @@ next-env.d.ts
 .vercel/output/
 # Wrangler local config
 .wrangler/
+
+# OpenNext build output
+open-next/
