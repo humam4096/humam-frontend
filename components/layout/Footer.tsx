@@ -2,7 +2,7 @@ import {Link} from '@/i18n/routing';
 import styles from './Footer.module.css';
 import LanguageSwitcher from './LanguageSwitcher';
 import Image from 'next/image';
-import {useTranslations} from 'next-intl';
+import { useTranslations } from 'next-intl';
 
 export default function Footer() {
   const year = new Date().getFullYear();

@@ -5,6 +5,8 @@ import {notFound} from 'next/navigation';
 import {Outfit, Inter, Tajawal} from 'next/font/google';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
+import GoogleAnalytics from '@/components/analytics/GoogleAnalytics';
+import PageViewTracker from '@/components/analytics/PageViewTracker';
 import '../globals.css';
 
 const inter = Inter({
@@ -73,8 +75,12 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} dir={isRtl ? 'rtl' : 'ltr'} className={`${inter.variable} ${outfit.variable} ${tajawal.variable}`}>
+      <head>
+        <GoogleAnalytics />
+      </head>
       <body>
         <NextIntlClientProvider messages={messages}>
+          <PageViewTracker />
           <Navbar />
           {children}
           <Footer />
