@@ -57,7 +57,7 @@ export default function ServicesBento() {
           <Link href="/services/consultancy" className={styles.largeCardLink}>
             <motion.div variants={cardVariants} className={`card ${styles.bentoCard} ${styles.largeCard} ${styles.consultancyCard}`}>
               {/* <div className={styles.cardBackground} style={{backgroundImage: 'url(/images/services/consultancy.svg)'}}></div> */}
-              <div className={styles.cardBackground} style={{backgroundImage: 'url(https://i.pinimg.com/1200x/a0/52/b9/a052b9aaacc3fbc30006d56a89b1d138.jpg)'}}></div>
+              <div className={styles.cardBackground} style={{backgroundImage: "url('/images/services/consultation-bg-image.jpg')"}}></div>
               <div className={styles.cardOverlay}></div>
               <div className={styles.bentoWatermarkLarge}>
                 <BrandHalfCircle />
@@ -73,7 +73,7 @@ export default function ServicesBento() {
           {/* Right Stacked Cards */}
           <Link href="/services/quality" className={styles.stackedCardLink}>
             <motion.div variants={cardVariants} className={`card ${styles.bentoCard} ${styles.qualityCard}`}>
-              <div className={styles.cardBackground} style={{backgroundImage: 'url(https://i.pinimg.com/1200x/63/18/4e/63184ea44635f0c62a21957a688ab0bb.jpg)'}}></div>
+              <div className={styles.cardBackground} style={{backgroundImage: "url('/images/services/quality-bg-image.jpg')"}}></div>
               <div className={styles.cardOverlay}></div>
               <div className={styles.bentoWatermarkSmall}>
                 <BrandStar fill="var(--color-brand-mustard)" />
@@ -88,7 +88,7 @@ export default function ServicesBento() {
 
           <Link href="/services/training" className={styles.stackedCardLink}>
             <motion.div variants={cardVariants} className={`card ${styles.bentoCard} ${styles.trainingCard}`}>
-              <div className={styles.cardBackground} style={{backgroundImage: 'url(https://i.pinimg.com/1200x/72/c6/23/72c62340b219883f84698df09791c9fa.jpg)'}}></div>
+              <div className={styles.cardBackground} style={{backgroundImage: "url('/images/services/training-bg-image.jpg')"}}></div>
               <div className={styles.cardOverlay}></div>
               <div className={styles.bentoWatermarkSmall} style={{ top: '-10%', left: '-10%', right: 'auto', bottom: 'auto' }}>
                 <BrandStar fill="var(--color-brand-red)" />
