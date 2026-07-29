@@ -87,6 +87,7 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
+  min-height: 2.2rem;
 }
 
 .overlay {
