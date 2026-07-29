@@ -21,7 +21,7 @@ const leaderBrandShapes: Record<string, React.ReactNode> = {
 const leaderImages: Record<string, string> = {
   atef: '/images/team/Atif.webp',
   enas: '/images/team/Enasu.webp',
-  alaa: '/images/team/allaa.webp',
+  alaa: '/images/team/Alaa.webp',
 };
 
 export default function Leadership() {
@@ -95,9 +95,6 @@ export default function Leadership() {
                   )}
                   <div className={styles.placeholderShape}>
                     {leaderBrandShapes[key]}
-                  </div>
-                  <div className={styles.imageInitial}>
-                    {t(`leadership.list.${key}.name`).charAt(0)}
                   </div>
                 </div>
                 <div className={styles.info}>

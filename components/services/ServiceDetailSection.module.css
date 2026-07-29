@@ -24,7 +24,7 @@
 }
 
 .description {
-  font-size: 1.125rem;
+  font-size: 1.35rem;
   line-height: 1.6;
   opacity: 0.75;
 }
@@ -78,7 +78,7 @@
 }
 
 .cardDesc {
-  font-size: 1.125rem;
+  font-size: 1.3rem;
   line-height: 1.7;
   opacity: 0.8;
   margin-bottom: 2rem;
@@ -92,7 +92,7 @@
 
 .includedLabel {
   font-family: var(--font-body);
-  font-size: 0.75rem;
+  font-size: 0.95rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -111,7 +111,7 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   color: var(--color-dark-olive);
   opacity: 0.8;
 }

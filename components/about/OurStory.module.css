@@ -57,14 +57,14 @@
 }
 
 .paragraph {
-  font-size: 1.125rem;
+  font-size: 1.35rem;
   line-height: 1.7;
   opacity: 0.85;
   color: var(--color-dark-olive);
 }
 
 .paragraph:first-child {
-  font-size: 1.25rem;
+  font-size: 1.4rem;
   opacity: 0.9;
   font-weight: 500;
 }

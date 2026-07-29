@@ -23,7 +23,7 @@
   background-image: linear-gradient(var(--border-color) 1px, transparent 1px),
     linear-gradient(90deg, var(--border-color) 1px, transparent 1px);
   background-size: 40px 40px;
-  opacity: 0.15;
+  opacity: 0.25;
   pointer-events: none;
   z-index: 0;
 }
@@ -77,10 +77,9 @@
 
 
 /* RIGHT COLUMN - TEXT */
-.infoColumn {
-  /* padding-bottom: 2rem; */
-  /* Align text block slightly up from the very bottom of the photo */
-}
+/* .infoColumn {
+  padding-bottom: 2rem;
+} */
 
 .bioHeader {
   margin-bottom: 2rem;
@@ -92,7 +91,7 @@
   font-family: var(--font-display);
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 500;
-  color: var(--color-brand-dark);
+  color: var(--color-brand-red);
   margin-bottom: 0.5rem;
   line-height: 1.1;
 }
@@ -105,7 +104,7 @@
 
 .role {
   font-family: var(--font-body);
-  font-size: 1.125rem;
+  font-size: 1.3rem;
   opacity: 0.7;
 }
 
@@ -125,8 +124,11 @@
 }
 
 .bioContent {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
   font-family: var(--font-body);
-  font-size: 1.125rem;
+  font-size: 1.3rem;
   line-height: 1.7;
   color: var(--color-brand-dark-olive);
   opacity: 0.8;
@@ -137,7 +139,7 @@
   display: inline-flex;
   align-items: center;
   font-family: var(--font-body);
-  font-size: 0.875rem;
+  font-size: 1rem;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.05em;

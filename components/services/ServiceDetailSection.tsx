@@ -1,6 +1,7 @@
 'use client';
 
 import {useRef} from 'react';
+import {useTranslations} from 'next-intl';
 import {motion, useScroll, useTransform} from 'framer-motion';
 import styles from './ServiceDetailSection.module.css';
 import { BrandTilePattern } from '../brand/BrandTilePattern';
@@ -19,7 +20,7 @@ interface ServiceDetailSectionProps {
   description: string;
 }
 
-function DetailCard({item, index, accent}: {item: DetailItem; index: number; accent: string}) {
+function DetailCard({item, index, accent, includedLabel}: {item: DetailItem; index: number; accent: string; includedLabel: string}) {
   const ref = useRef<HTMLDivElement>(null);
   const {scrollYProgress} = useScroll({
     target: ref,
@@ -39,7 +40,7 @@ function DetailCard({item, index, accent}: {item: DetailItem; index: number; acc
       <h3 className={styles.cardTitle}>{item.title}</h3>
       <p className={styles.cardDesc}>{item.desc}</p>
       <div className={styles.includedSection}>
-        <span className={styles.includedLabel}>What&apos;s Included</span>
+        <span className={styles.includedLabel}>{includedLabel}</span>
         <div className={styles.includedGrid}>
           {includedItems.map((text, i) => (
             <div key={i} className={styles.includedItem}>
@@ -54,6 +55,8 @@ function DetailCard({item, index, accent}: {item: DetailItem; index: number; acc
 }
 
 export default function ServiceDetailSection({items, accent = 'var(--color-brand-green)', eyebrow, heading, description}: ServiceDetailSectionProps) {
+  const t = useTranslations('ConsultancyPage.labels');
+  
   return (
     <section className={`section ${styles.wrapper}`}>
       <div className={`container ${styles.gridContainer}`}>
@@ -75,7 +78,7 @@ export default function ServiceDetailSection({items, accent = 'var(--color-brand
             <BrandTilePattern />
           </div>
           {items.map((item, index) => (
-            <DetailCard key={index} item={item} index={index} accent={accent} />
+            <DetailCard key={index} item={item} index={index} accent={accent} includedLabel={t('included')} />
           ))}
         </div>
       </div>

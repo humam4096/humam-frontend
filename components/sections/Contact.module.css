@@ -63,7 +63,7 @@
   align-items: center;
   gap: 1rem;
   font-family: var(--font-body);
-  font-size: 1.125rem;
+  font-size: 1.3rem;
   color: var(--color-brand-dark);
 }
 
@@ -96,7 +96,7 @@
 
 .infoLabel {
   font-family: var(--font-body);
-  font-size: 0.875rem;
+  font-size: 1rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -126,7 +126,7 @@
 
 .quote {
   font-family: var(--font-body);
-  font-size: 1.125rem;
+  font-size: 1.3rem;
   font-style: italic;
   line-height: 1.6;
   color: var(--color-brand-dark);
@@ -135,7 +135,7 @@
 
 .author {
   font-family: var(--font-body);
-  font-size: 0.875rem;
+  font-size: 1rem;
   font-weight: 600;
   color: var(--color-brand-green);
   text-transform: uppercase;
@@ -173,7 +173,7 @@
 
 .label {
   font-family: var(--font-body);
-  font-size: 0.875rem;
+  font-size: 1rem;
   font-weight: 500;
   color: var(--color-brand-dark);
 }

@@ -5,7 +5,8 @@
     "subtitle": "Ensure Sustainable Success.",
     "description": "Expert consultancy, structural planning, and quality assurance for the modern catering and food industry.",
     "ctaPrimary": "Discuss Your Project",
-    "ctaSecondary": "Explore Our Services"
+    "ctaSecondary": "Explore Our Services",
+    "trustBar": "Our Trusted Partners"
   },
   "Navbar": {
     "home": "Home",
@@ -89,12 +90,12 @@
       "atef": {
         "name": "Atef Al-Arishi",
         "role": "General Manager",
-        "bio": "27 years managing catering for Hajj & Umrah, with expertise in supply chain and pre-prepared meals."
+        "bio": "28 years managing catering for Hajj & Umrah, with expertise in supply chain and pre-prepared meals."
       },
       "enas": {
         "name": "Enas Khodary",
         "role": "Consultant Chef",
-        "bio": "16 years culinary experience, certified by Culinary Arts Authority as an expert in Saudi cuisine."
+        "bio": "18 years culinary experience, certified by Culinary Arts Authority as an expert in Saudi cuisine."
       },
       "alaa": {
         "name": "Alaa Zahdi",
@@ -201,6 +202,9 @@
       "heading": "Every Detail. Engineered for Growth.",
       "description": "Our consultancy covers the full spectrum of food business development — whether you're launching a new concept, optimizing an existing operation, or scaling across multiple locations."
     },
+    "labels": {
+      "included": "What's Included"
+    },
     "offerings": {
       "office": {
         "title": "Office Consultations",
@@ -255,6 +259,11 @@
       "heading": "Systems Built to Certify. Designed to Last.",
       "description": "From ISO certification to HACCP implementation, we provide end-to-end quality system design, documentation, training, and audit preparation."
     },
+    "labels": {
+      "goal": "Goal",
+      "included": "What's Included",
+      "process": "Process"
+    },
     "standards": {
       "iso9001": {
         "title": "ISO 9001",
@@ -296,6 +305,9 @@
       "eyebrow": "Training Philosophy",
       "heading": "Knowledge That Transfers. Skills That Stay.",
       "description": "Our training programs are designed by practitioners, not theorists. Every session combines hands-on practice with real-world application — because lasting change happens through doing, not just learning."
+    },
+    "labels": {
+      "outcomes": "Outcomes"
     },
     "programs": {
       "employee": {
@@ -437,7 +449,7 @@
     },
     "commitment": {
       "eyebrow": "Our Promise",
-      "title": "More Than Consultants — Committed Partners",
+      "title": "Committed Partners",
       "description": "At Humam we are more than consultants — we are committed partners dedicated to the success of our clients in the food industry. We believe every food business deserves world-class systems, training, and oversight."
     },
     "leadership": {
@@ -448,17 +460,19 @@
         "atef": {
           "name": "Atef Al-Arishi",
           "role": "Founder & General Manager",
-          "bio": "With 27 years of experience managing the catering sector for Hajj and Umrah pilgrims, Atef is a specialist in operating pre-prepared meals. He also has over 7 years of expertise in supply chain management and logistics. His career began with managing high-profile external event coordination."
+          "bio": "With 28 years of experience managing the catering sector for Hajj and Umrah pilgrims, Atef is a specialist in operating pre-prepared meals. He also has over 7 years of expertise in supply chain management and logistics. His career began with managing high-profile external event coordination."
         },
         "enas": {
           "name": "Enas Khodary",
           "role": "Consultant Chef & Culinary Director",
-          "bio": "With 16 years of culinary experience, Enas is renowned for her creativity, persistence, and dedication. She is a member of multiple Saudi and international chef associations and is certified by the Culinary Arts Authority as an expert in documenting Saudi cuisine. Enas represents Saudi Arabia in the global Halal community."
+          "bio": "Chef Enas Mohammed Khodary is a consulting chef and executive chef with a Master's degree in Nutrition and experience in the food sector since 2008. She specializes in developing and operating food and beverage projects, managing professional kitchens, research and development (R&D), product development, standard recipe creation, and improving operational efficiency.",
+          "bioSub": "She is a certified food safety trainer from Highfield UK and the Saudi Food and Drug Authority, a certified chef from the Saudi Culinary Arts Authority for documenting Saudi cuisine, and winner of the Heritage of Our Kitchen competition. She holds membership in Worldchefs, represents Saudi Arabia in the Global Halal Association, and has achieved multiple medals in professional culinary competitions."
         },
         "alaa": {
           "name": "Alaa Zahdi",
           "role": "Food Manufacturing & Quality Engineer",
-          "bio": "Alaa specializes in food manufacturing processes, quality assurance, development, and consulting. Passionate about advancing the food industry, she actively researches and adopts technological innovations to provide solutions that enhance production efficiency and minimize waste."
+          "bio": "Consultant in quality systems and food safety, and food manufacturing engineer with experience in managing and operating catering projects and qualifying food establishments and factories. Specialized in implementing ISO 22000, ISO 9001, HACCP, and GMP standards, with expertise in supervising Hajj and Umrah projects, evaluating kitchens and factories, and establishing food projects.",
+          "bioSub": "Through Humam company, she provides consulting solutions to develop operating systems, enhance compliance, reduce risks, and improve product and service quality, promoting operational excellence and sustainability."
         }
       }
     },

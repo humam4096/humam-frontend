@@ -154,7 +154,7 @@ p {
 .eyebrow {
   text-transform: uppercase;
   letter-spacing: 2px;
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   font-weight: 700;
   color: var(--color-muted-green);
   display: block;

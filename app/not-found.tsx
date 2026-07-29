@@ -1,11 +1,6 @@
 'use client';
 
-// This is the global 404 page that catches requests without a valid locale prefix
-// Example: /missing-page
-// Since it's outside the [locale] scope, we render a basic HTML shell 
-// and the NotFoundHero. We can't use next-intl translations directly here without context,
-// so we provide default english fallback strings in a wrapper or just render a basic message.
-// For Next.js App Router with next-intl, typically a meta refresh or a simple English fallback is used.
+
 import {BrandStar} from '@/components/brand/BrandStar';
 
 export default function GlobalNotFound() {

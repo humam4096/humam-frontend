@@ -44,7 +44,7 @@
 }
 
 .description {
-  font-size: 1.125rem;
+  font-size: 1.35rem;
   line-height: 1.6;
   opacity: 0.75;
 }
@@ -121,7 +121,7 @@
 
 .outcomesLabel {
   font-family: var(--font-body);
-  font-size: 0.7rem;
+  font-size: 0.95rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -140,7 +140,7 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 0.9rem;
+  font-size: 1.05rem;
   color: var(--color-dark-olive);
   opacity: 0.8;
 }
@@ -217,7 +217,7 @@
 
 .ctaEyebrow {
   font-family: var(--font-body);
-  font-size: 0.75rem;
+  font-size: 0.95rem;
   text-transform: uppercase;
   letter-spacing: 0.15em;
   opacity: 0.7;
@@ -233,7 +233,7 @@
 }
 
 .ctaDesc {
-  font-size: 1.125rem;
+  font-size: 1.35rem;
   line-height: 1.6;
   opacity: 0.75;
   margin-bottom: 2.5rem;

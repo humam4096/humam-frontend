@@ -52,7 +52,7 @@
 }
 
 .brand p {
-  font-size: 1.125rem;
+  font-size: 1.3rem;
   line-height: 1.5;
   color: var(--color-brand-green);
   max-width: 40ch;
@@ -74,7 +74,7 @@
 
 .linkGroup h4 {
   font-family: var(--font-body);
-  font-size: 1.125rem;
+  font-size: 1.3rem;
   /* 18px */
   font-weight: 600;
   color: var(--color-brand-dark);
@@ -124,7 +124,7 @@
 }
 
 .bottomLinks p {
-  font-size: 0.875rem;
+  font-size: 1rem;
   /* 14px */
   color: var(--color-brand-green);
   opacity: 0.8;

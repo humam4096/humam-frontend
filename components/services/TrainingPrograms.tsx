@@ -19,6 +19,7 @@ interface ServiceDetailSectionProps {
 
 export default function TrainingPrograms({ eyebrow, heading, description }: ServiceDetailSectionProps) {
   const t = useTranslations('TrainingPage');
+  const labels = useTranslations('TrainingPage.labels');
 
   const containerVariants = {
     hidden: {opacity: 0},
@@ -82,7 +83,7 @@ export default function TrainingPrograms({ eyebrow, heading, description }: Serv
                   <h3 className={styles.cardTitle}>{t(`programs.${key}.title`)}</h3>
                   <p className={styles.cardDesc}>{t(`programs.${key}.desc`)}</p>
                   <div className={styles.outcomesSection}>
-                    <span className={styles.outcomesLabel}>Outcomes</span>
+                    <span className={styles.outcomesLabel}>{labels('outcomes')}</span>
                     <div className={styles.outcomesGrid}>
                       {outcomes.map((outcome, i) => (
                         <div key={i} className={styles.outcomeItem}>

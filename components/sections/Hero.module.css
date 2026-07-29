@@ -59,7 +59,7 @@
   background-image: url('/patterns/pattern-03.png');
   background-size: cover;
   background-repeat: no-repeat;
-  opacity: 0.05;
+  opacity: 0.02;
   pointer-events: none;
   z-index: 1;
   mix-blend-mode: luminosity;
@@ -76,7 +76,9 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom, rgba(4, 75, 41, 0.551), var(--color-brand-dark));
+  background: linear-gradient(to bottom, rgba(4, 75, 41, 0.461), var(--color-brand-dark));
+  /* background: linear-gradient(to top, rgba(4, 75, 41, 0.961), transparent); */
+
   z-index: 2;
 }
 
@@ -108,7 +110,7 @@
 
 .badge {
   font-family: var(--font-body);
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   opacity: 0.8;
@@ -133,7 +135,7 @@
 }
 
 .description {
-  font-size: 1.125rem;
+  font-size: 1.4rem;
   line-height: 1.4;
   opacity: 0.85;
   max-width: 60ch;

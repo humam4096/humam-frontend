@@ -20,7 +20,7 @@
 }
 
 .description {
-  font-size: 1.125rem;
+  font-size: 1.4rem;
   line-height: 1.7;
   opacity: 0.8;
 }
@@ -87,7 +87,7 @@
 
 .statLabel {
   font-family: var(--font-body);
-  font-size: 0.9rem;
+  font-size: 1.05rem;
   color: var(--color-muted-green);
   font-weight: 600;
   text-transform: uppercase;

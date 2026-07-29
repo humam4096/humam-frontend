@@ -31,7 +31,7 @@
 .roleBadge {
   background-color: var(--color-muted-green);
   color: var(--color-light-cream);
-  font-size: 0.65rem;
+  font-size: 0.85rem;
   font-weight: 700;
   padding: 0.25rem 0.5rem;
   border-radius: 99px;
@@ -96,13 +96,13 @@
 }
 
 .userInfo p {
-  font-size: 0.875rem;
+  font-size: 1rem;
   font-weight: 600;
   margin: 0;
 }
 
 .logout {
-  font-size: 0.75rem !important;
+  font-size: 0.9rem !important;
   color: var(--color-muted-green) !important;
   cursor: pointer;
   opacity: 0.8;

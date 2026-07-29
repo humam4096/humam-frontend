@@ -44,7 +44,7 @@
 }
 
 .description {
-  font-size: 1.125rem;
+  font-size: 1.35rem;
   line-height: 1.6;
   opacity: 0.75;
 }
@@ -93,7 +93,7 @@
 }
 
 .cardSubtitle {
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   opacity: 0.65;
   color: var(--color-dark-olive);
   position: relative;
@@ -111,7 +111,7 @@
 
 .sectionLabel {
   font-family: var(--font-body);
-  font-size: 0.7rem;
+  font-size: 0.95rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -138,7 +138,7 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 0.9rem;
+  font-size: 1.05rem;
   color: var(--color-dark-olive);
   opacity: 0.8;
 }
@@ -166,14 +166,14 @@
 
 .stepNumber {
   font-family: var(--font-display);
-  font-size: 0.85rem;
+  font-size: 1rem;
   font-weight: 600;
   color: var(--color-brand-mustard);
   opacity: 0.5;
 }
 
 .stepText {
-  font-size: 0.85rem;
+  font-size: 1rem;
   color: var(--color-dark-olive);
   opacity: 0.75;
   line-height: 1.3;

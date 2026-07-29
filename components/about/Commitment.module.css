@@ -71,7 +71,7 @@
 .eyebrow {
   text-transform: uppercase;
   letter-spacing: 2px;
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-weight: 700;
   color: var(--color-brand-mustard);
   display: block;
@@ -86,7 +86,7 @@
 }
 
 .description {
-  font-size: 1.25rem;
+  font-size: 1.4rem;
   line-height: 1.7;
   opacity: 0.8;
   color: var(--color-light-cream);

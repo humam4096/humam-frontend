@@ -16,6 +16,7 @@ interface ServiceDetailSectionProps {
 
 export default function QualityStandards({ eyebrow, heading, description }: ServiceDetailSectionProps) {
   const t = useTranslations('QualityPage');
+  const labels = useTranslations('QualityPage.labels');
 
   const containerVariants = {
     hidden: {opacity: 0},
@@ -81,13 +82,13 @@ export default function QualityStandards({ eyebrow, heading, description }: Serv
 
                 {/* Goal */}
                 <div className={styles.cardSection}>
-                  <span className={styles.sectionLabel}>Goal</span>
+                  <span className={styles.sectionLabel}>{labels('goal')}</span>
                   <p className={styles.goalText}>{t(`standards.${key}.goal`)}</p>
                 </div>
 
                 {/* What's Included */}
                 <div className={styles.cardSection}>
-                  <span className={styles.sectionLabel}>What&apos;s Included</span>
+                  <span className={styles.sectionLabel}>{labels('included')}</span>
                   <div className={styles.includedList}>
                     {included.map((item, i) => (
                       <div key={i} className={styles.includedItem}>
@@ -100,7 +101,7 @@ export default function QualityStandards({ eyebrow, heading, description }: Serv
 
                 {/* Process Steps */}
                 <div className={styles.cardSection}>
-                  <span className={styles.sectionLabel}>Process</span>
+                  <span className={styles.sectionLabel}>{labels('process')}</span>
                   <div className={styles.stepsRow}>
                     {steps.map((step, i) => (
                       <div key={i} className={styles.step}>

@@ -6,7 +6,7 @@
   border-radius: 99px;
   font-family: var(--font-body);
   font-weight: 600;
-  font-size: 1.05rem;
+  font-size: 1.2rem;
   cursor: pointer;
   transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
   border: none;

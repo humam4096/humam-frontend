@@ -44,7 +44,7 @@
 
 .subtitle {
   margin-top: 1rem;
-  font-size: 1.125rem;
+  font-size: 1.3rem;
   line-height: 1.6;
   opacity: 0.75;
 }
@@ -155,7 +155,7 @@
 
 .role {
   color: var(--color-muted-green);
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1.5px;
