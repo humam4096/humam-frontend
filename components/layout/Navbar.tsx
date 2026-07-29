@@ -55,12 +55,52 @@ export default function Navbar() {
           />
         </Link>
         <ul className={styles.navLinks}>
-          <li><Link href="/">{t('home')}</Link></li>
-          <li><Link href="/about">{t('about')}</Link></li>
-          <li><Link href="/services">{t('services')}</Link></li>
+          <li>
+            <Link 
+              href="/" 
+              className={pathname === '/' ? styles.active : ''}
+              aria-current={pathname === '/' ? 'page' : undefined}
+            >
+              {t('home')}
+            </Link>
+          </li>
+          <li>
+            <Link 
+              href="/about" 
+              className={pathname === '/about' ? styles.active : ''}
+              aria-current={pathname === '/about' ? 'page' : undefined}
+            >
+              {t('about')}
+            </Link>
+          </li>
+          <li>
+            <Link 
+              href="/services" 
+              className={pathname === '/services' ? styles.active : ''}
+              aria-current={pathname === '/services' ? 'page' : undefined}
+            >
+              {t('services')}
+            </Link>
+          </li>
           {/* <li><Link href="/industries">{t('industries')}</Link></li> */}
-          <li><Link href="/training-center">{t('training')}</Link></li>
-          <li><Link href="/contact">{t('contact')}</Link></li>
+          <li>
+            <Link 
+              href="/training-center" 
+              className={pathname === '/training-center' ? styles.active : ''}
+              aria-current={pathname === '/training-center' ? 'page' : undefined}
+            >
+              {t('training')}
+            </Link>
+          </li>
+          <li>
+            <Link 
+              href="/contact" 
+              className={pathname === '/contact' ? styles.active : ''}
+              aria-current={pathname === '/contact' ? 'page' : undefined}
+            >
+              {t('contact')}
+            </Link>
+          </li>
         </ul>
         <div className={styles.actions}>
           <LanguageSwitcher />
@@ -102,11 +142,56 @@ export default function Navbar() {
         </div>
         
         <ul className={styles.mobileNavLinks}>
-          <li><Link href="/" onClick={() => setIsMenuOpen(false)}>{t('home')}</Link></li>
-          <li><Link href="/about" onClick={() => setIsMenuOpen(false)}>{t('about')}</Link></li>
-          <li><Link href="/services" onClick={() => setIsMenuOpen(false)}>{t('services')}</Link></li>
-          <li><Link href="/training-center" onClick={() => setIsMenuOpen(false)}>{t('training')}</Link></li>
-          <li><Link href="/contact" onClick={() => setIsMenuOpen(false)}>{t('contact')}</Link></li>
+          <li>
+            <Link 
+              href="/" 
+              onClick={() => setIsMenuOpen(false)}
+              className={pathname === '/' ? styles.active : ''}
+              aria-current={pathname === '/' ? 'page' : undefined}
+            >
+              {t('home')}
+            </Link>
+          </li>
+          <li>
+            <Link 
+              href="/about" 
+              onClick={() => setIsMenuOpen(false)}
+              className={pathname === '/about' ? styles.active : ''}
+              aria-current={pathname === '/about' ? 'page' : undefined}
+            >
+              {t('about')}
+            </Link>
+          </li>
+          <li>
+            <Link 
+              href="/services" 
+              onClick={() => setIsMenuOpen(false)}
+              className={pathname === '/services' ? styles.active : ''}
+              aria-current={pathname === '/services' ? 'page' : undefined}
+            >
+              {t('services')}
+            </Link>
+          </li>
+          <li>
+            <Link 
+              href="/training-center" 
+              onClick={() => setIsMenuOpen(false)}
+              className={pathname === '/training-center' ? styles.active : ''}
+              aria-current={pathname === '/training-center' ? 'page' : undefined}
+            >
+              {t('training')}
+            </Link>
+          </li>
+          <li>
+            <Link 
+              href="/contact" 
+              onClick={() => setIsMenuOpen(false)}
+              className={pathname === '/contact' ? styles.active : ''}
+              aria-current={pathname === '/contact' ? 'page' : undefined}
+            >
+              {t('contact')}
+            </Link>
+          </li>
         </ul>
         <div className={styles.mobileActions}>
           <LanguageSwitcher />

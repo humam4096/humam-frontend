@@ -4,14 +4,30 @@
   width: 100%;
   background-color: var(--color-light-cream);
   border-bottom: 1px solid transparent;
-  transition: border-color 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 50;
-  /* padding: 1rem 0; */
   padding-top: 0.5rem;
+  backdrop-filter: blur(8px);
 }
 
 .navbar.scrolled {
   border-bottom: 1px solid var(--border-color);
+  background-color: rgba(var(--color-light-cream-rgb, 250, 248, 243), 0.95);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.03);
+}
+
+.logo {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-block;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+.logo:active {
+  transform: scale(0.98);
 }
 
 .inner {
@@ -22,18 +38,72 @@
 
 .navLinks {
   display: flex;
-  gap: 2rem;
+  gap: 0.5rem;
   list-style: none;
+}
+
+.navLinks li {
+  position: relative;
 }
 
 .navLinks a {
   font-size: 1.05rem;
   font-weight: 500;
-  transition: color 0.2s ease;
+  padding: 0.75rem 1.25rem;
+  border-radius: 12px;
+  position: relative;
+  display: inline-block;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  color: var(--color-text-primary);
+}
+
+.navLinks a::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--color-muted-green), var(--color-brand-green));
+  opacity: 0;
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: -1;
+}
+
+.navLinks a::after {
+  content: '';
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  width: 80%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-brand-green), transparent);
+  border-radius: 2px;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .navLinks a:hover {
-  color: var(--color-muted-green);
+  color: var(--color-light-cream);
+  transform: translateY(-2px);
+}
+
+.navLinks a:hover::before {
+  opacity: 1;
+}
+
+.navLinks a:active {
+  transform: translateY(0);
+}
+
+/* Active link state */
+.navLinks a[aria-current="page"],
+.navLinks a.active {
+  color: var(--color-brand-green);
+  background-color: rgba(131, 157, 120, 0.08);
+}
+
+.navLinks a[aria-current="page"]::after,
+.navLinks a.active::after {
+  transform: translateX(-50%) scaleX(1);
 }
 
 .actions {
@@ -70,6 +140,15 @@
   padding: 0;
   z-index: 60;
   /* Above the mobile menu */
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hamburger:hover {
+  transform: scale(1.05);
+}
+
+.hamburger:active {
+  transform: scale(0.95);
 }
 
 @media (max-width: 768px) {
@@ -207,7 +286,7 @@
 }
 
 .mobileMenu {
-  display: flex;
+  display: none;
   flex-direction: column;
   position: fixed;
   top: 0;
@@ -230,6 +309,12 @@
   background-image: radial-gradient(circle at bottom left, rgba(131, 157, 120, 0.1) 0%, transparent 60%);
   transition: left 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   box-shadow: 10px 0 40px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .mobileMenu {
+    display: flex;
+  }
 }
 
 .mobileMenu.mobileMenuOpen {
@@ -299,6 +384,26 @@
 .mobileNavLinks a:hover::before,
 .mobileNavLinks a:active::before {
   transform: scale(1);
+}
+
+/* Active state for mobile menu */
+.mobileNavLinks a[aria-current="page"],
+.mobileNavLinks a.active {
+  color: var(--color-brand-green);
+  opacity: 1;
+  padding-left: 1.5rem;
+}
+
+[dir="rtl"] .mobileNavLinks a[aria-current="page"],
+[dir="rtl"] .mobileNavLinks a.active {
+  padding-left: 0;
+  padding-right: 1.5rem;
+}
+
+.mobileNavLinks a[aria-current="page"]::before,
+.mobileNavLinks a.active::before {
+  transform: scale(1);
+  background-color: var(--color-brand-green);
 }
 
 .mobileActions {
