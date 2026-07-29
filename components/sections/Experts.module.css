@@ -43,8 +43,13 @@
 }
 
 .expertCard:hover {
-  transform: translateY(-5px);
+  /* transform: translateY(-5px); */
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+.expertCard:hover .imagePlaceholder {
+  transform: scale(1.05);
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  
 }
 
 .imagePlaceholder {
@@ -53,6 +58,8 @@
   /* Light Dark Olive */
   position: relative;
   overflow: hidden;
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+
 }
 
 .teamImage {
@@ -76,7 +83,7 @@
 
 .role {
   color: var(--color-muted-green);
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;

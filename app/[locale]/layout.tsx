@@ -5,6 +5,7 @@ import {notFound} from 'next/navigation';
 import {Outfit, Inter, Tajawal} from 'next/font/google';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
+import PageTransition from '@/components/layout/PageTransition';
 import GoogleAnalytics from '@/components/analytics/GoogleAnalytics';
 import PageViewTracker from '@/components/analytics/PageViewTracker';
 import '../globals.css';
@@ -82,7 +83,9 @@ export default async function LocaleLayout({
         <NextIntlClientProvider messages={messages}>
           <PageViewTracker />
           <Navbar />
-          {children}
+          <PageTransition>
+            {children}
+          </PageTransition>
           <Footer />
         </NextIntlClientProvider>
       </body>
