@@ -69,14 +69,14 @@ export default function Contact() {
       if (response.data.success) {
         setSubmitMessage({ type: 'success', text: response.data.message || 'Thank you! We will contact you soon.' });
         // Reset form
-        // setFormData({
-        //   name: '',
-        //   email: '',
-        //   company: '',
-        //   message: '',
-        //   industry: '',
-        //   service: '',
-        // });
+        setFormData({
+          name: '',
+          email: '',
+          company: '',
+          message: '',
+          industry: '',
+          service: '',
+        });
       } else {
         setSubmitMessage({ type: 'error', text: response.data.error || 'Something went wrong. Please try again.' });
       }

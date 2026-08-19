@@ -12,8 +12,7 @@ export default function Sidebar() {
 
   const links = [
     {href: '/dashboard', label: 'Overview', roles: ['ADMIN', 'EDITOR', 'CLIENT']},
-    {href: '/dashboard/client', label: 'My Projects', roles: ['CLIENT', 'ADMIN']},
-    {href: '/dashboard/admin', label: 'Admin Settings', roles: ['ADMIN']},
+    {href: '/dashboard/messages', label: 'Messages', roles: ['CLIENT', 'ADMIN']},
   ];
 
   const visibleLinks = links.filter((link) => user?.role && link.roles.includes(user.role));

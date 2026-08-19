@@ -33,6 +33,7 @@ export default function Footer() {
               <li><Link href="/industries">{t('sections.company.industries')}</Link></li>
               <li><Link href="/experts">{t('sections.company.experts')}</Link></li>
               <li><Link href="/contact">{t('sections.company.contact')}</Link></li>
+              <li><Link href="/dashboard">{t('sections.company.dashboard')}</Link></li>
             </ul>
           </div>
           

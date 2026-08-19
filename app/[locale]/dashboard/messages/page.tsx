@@ -20,7 +20,7 @@ export default function ClientPage() {
 
   return (
     <div style={{padding: '3rem'}}>
-      <h1 style={{fontSize: '2rem', marginBottom: '0.5rem'}}>My Projects</h1>
+      <h1 style={{fontSize: '2rem', marginBottom: '0.5rem'}}>Contact Messages</h1>
       <p style={{opacity: 0.8, marginBottom: '2rem'}}>Track the progress of your ongoing consultancy projects.</p>
 
       <div className="card">

@@ -13,7 +13,6 @@ export async function POST(req: Request) {
   }
 
   const db = getDb();
-  console.log(db)
 
   await db.insert(contacts).values(data);
 

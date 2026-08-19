@@ -503,7 +503,8 @@
         "services": "Services",
         "industries": "Industries",
         "experts": "Our Experts",
-        "contact": "Contact"
+        "contact": "Contact",
+        "dashboard": "Dashboard"
       },
       "expertise": {
         "title": "Expertise",

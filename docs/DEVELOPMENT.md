@@ -1,5 +1,9 @@
 # Development Guide
 
+> 📚 **For comprehensive backend documentation, see [docs/BACKEND.md](docs/BACKEND.md)**
+
+This guide covers quick setup and common development tasks.
+
 ## Database Setup with Cloudflare D1
 
 This project uses Cloudflare D1 (SQLite) for the database.
