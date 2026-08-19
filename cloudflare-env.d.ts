@@ -5,14 +5,9 @@
 
 /// <reference types="@cloudflare/workers-types" />
 
-interface CloudflareEnv {
-  ASSETS: Fetcher;
-  IMAGES: any;
-}
-
 declare global {
-  namespace NodeJS {
-    interface ProcessEnv extends CloudflareEnv {}
+  interface CloudflareEnv {
+    DB: D1Database;
   }
 }
 

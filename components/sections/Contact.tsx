@@ -59,26 +59,24 @@ export default function Contact() {
     setSubmitMessage(null);
     
     // Validate with Zod
-    const result = formData;
-  
     
     setIsSubmitting(true);
     
     try {
-      const response = await axios.post<ContactFormResponse>('/api/contact', result.data);
+      const response = await axios.post<ContactFormResponse>('/api/contact', formData);
       console.log(response)
       
       if (response.data.success) {
         setSubmitMessage({ type: 'success', text: response.data.message || 'Thank you! We will contact you soon.' });
         // Reset form
-        setFormData({
-          name: '',
-          email: '',
-          company: '',
-          message: '',
-          industry: '',
-          service: '',
-        });
+        // setFormData({
+        //   name: '',
+        //   email: '',
+        //   company: '',
+        //   message: '',
+        //   industry: '',
+        //   service: '',
+        // });
       } else {
         setSubmitMessage({ type: 'error', text: response.data.error || 'Something went wrong. Please try again.' });
       }
