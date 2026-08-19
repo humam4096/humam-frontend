@@ -12,6 +12,7 @@
     "home": "Home",
     "about": "About Us",
     "services": "Services",
+    "activities": "Activities",
     "industries": "Industries",
     "training": "Training Center",
     "contact": "Contact",
@@ -534,6 +535,75 @@
       "home": "Return to Homepage",
       "services": "Explore Services",
       "contact": "Contact Us"
+    }
+  },
+  "ActivitiesPage": {
+    "hero": {
+      "eyebrow": "Our Portfolio",
+      "title": "Excellence in Action",
+      "subtitle": "Launch your food business with proven systems — without starting from scratch or wasting time on trial and error.",
+      "year": "(2024-2025)"
+    },
+    "grid": {
+      "eyebrow": "Featured Projects",
+      "title": "Explore Our Success Stories",
+      "activities": {
+        "restaurant": {
+          "title": "Premium Restaurant Launch",
+          "category": "Consultancy",
+          "description": "Complete restaurant setup from concept to launch, ensuring operational excellence and profitability."
+        },
+        "factory": {
+          "title": "Food Factory Quality System",
+          "category": "Quality & Safety",
+          "description": "Comprehensive quality management systems for food manufacturing facilities meeting international standards."
+        },
+        "training": {
+          "title": "Professional Chef Development",
+          "category": "Training",
+          "description": "Advanced culinary training programs designed to elevate team skills and kitchen performance."
+        },
+        "certification": {
+          "title": "ISO 22000 Certification",
+          "category": "Quality & Safety",
+          "description": "Full support to achieve and maintain ISO 22000 certification for food safety management."
+        },
+        "menu": {
+          "title": "Strategic Menu Engineering",
+          "category": "Consultancy",
+          "description": "Data-driven menu optimization to maximize profitability and customer satisfaction."
+        },
+        "hajj": {
+          "title": "Large-Scale Hajj Catering",
+          "category": "Operations",
+          "description": "High-volume catering operations for the Hajj season with exceptional quality and safety standards."
+        }
+      },
+      "cta": {
+        "text": "Ready to create your own success story with proven systems and expert guidance?",
+        "button": "Start Your Project"
+      }
+    }
+  },
+  "ActivityDetail": {
+    "breadcrumb": "Activities",
+    "info": {
+      "year": "Year",
+      "client": "Client",
+      "location": "Location"
+    },
+    "related": {
+      "title": "More Projects",
+      "activities": {
+        "factory": {
+          "title": "Food Factory Quality System",
+          "category": "Quality & Safety"
+        },
+        "training": {
+          "title": "Professional Chef Development",
+          "category": "Training"
+        }
+      }
     }
   }
 }

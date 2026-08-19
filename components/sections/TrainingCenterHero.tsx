@@ -39,14 +39,7 @@ export default function TrainingCenterHero() {
         {/* Background Masked Area */}
         <div className={styles.background}>
           {/* Brand Star Watermark */}
-          <motion.div 
-            className={styles.brandWatermark}
-            initial={{ opacity: 0, rotate: -15, scale: 0.8 }}
-            animate={{ opacity: 0.15, rotate: 0, scale: 1 }}
-            transition={{ duration: 1.5, ease: "easeOut" }}
-          >
-            <BrandStar />
-          </motion.div>
+  
           <div className={styles.overlay}></div>
         </div>
 

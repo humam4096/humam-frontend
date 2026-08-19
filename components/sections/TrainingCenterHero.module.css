@@ -17,7 +17,7 @@
   padding: 3rem;
   border-radius: var(--border-radius);
   overflow: hidden;
-  background-image: url("https://ascfoodsafety.com/wp-content/uploads/2024/05/Good-Manufacturing-Practices-for-Food-Handlers-Course.jpg");
+  background-image: url('/images/services/humam-services-image/humam-training.webp');
   background-size: cover;
   background-position: center;
   /* Strong brand burgundy base */
@@ -31,17 +31,6 @@
   width: 100%;
   height: 100%;
   z-index: 0;
-}
-
-.brandWatermark {
-  position: absolute;
-  top: -20%;
-  right: -10%;
-  width: 120vh;
-  height: 120vh;
-  opacity: 0.15;
-  pointer-events: none;
-  z-index: 1;
 }
 
 [dir="rtl"] .brandWatermark {
@@ -59,7 +48,7 @@
   background-image: url('/patterns/pattern-03.png');
   background-size: cover;
   background-repeat: no-repeat;
-  opacity: 0.05;
+  opacity: 0.01;
   pointer-events: none;
   z-index: 1;
   mix-blend-mode: luminosity;

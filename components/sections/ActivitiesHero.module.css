@@ -1,0 +1,44 @@
+.hero {
+  padding: 200px 0 120px;
+  background: linear-gradient(
+    to bottom,
+    var(--color-brand-cream) 0%,
+    var(--color-brand-beige) 100%
+  );
+}
+
+.content {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.title {
+  margin-bottom: 32px;
+  line-height: 1.1;
+}
+
+.subtitle {
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  color: var(--color-dark-olive);
+  opacity: 0.85;
+  line-height: 1.6;
+  margin-bottom: 24px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.year {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-muted-green);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 160px 0 80px;
+  }
+}

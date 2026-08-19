@@ -17,7 +17,7 @@
   padding: 3rem;
   border-radius: var(--border-radius);
   overflow: hidden;
-  background-image: url('https://media.istockphoto.com/id/1388791611/photo/teppanyaki-style.jpg?s=612x612&w=0&k=20&c=gNhQXH4awScPV_ZR3GHXm6PKnz4HtjBS8Y5Oqb3Cs50=');
+  background-image: url('/images/humam-hero/dashboard.webp');
   background-size: cover;
   background-position: center;
   /* Strong brand burgundy base */
@@ -59,7 +59,7 @@
   background-image: url('/patterns/pattern-03.png');
   background-size: cover;
   background-repeat: no-repeat;
-  opacity: 0.02;
+  opacity: 0.01;
   pointer-events: none;
   z-index: 1;
   mix-blend-mode: luminosity;
@@ -70,7 +70,7 @@
   left: -10%;
 }
 
-.overlay {
+.overlay{
   position: absolute;
   top: 0;
   left: 0;

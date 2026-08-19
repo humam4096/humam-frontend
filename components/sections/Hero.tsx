@@ -3,6 +3,7 @@
 import styles from './Hero.module.css';
 import {useTranslations} from 'next-intl';
 import {motion} from 'framer-motion';
+import Button from '../ui/Button';
 
 export default function Hero() {
   const t = useTranslations('HomePage');
@@ -35,15 +36,7 @@ export default function Hero() {
       <div className={styles.heroWrapper}>
         {/* Background Masked Area */}
         <div className={styles.background}>
-          {/* Brand Star Watermark */}
-          <motion.div 
-            className={styles.brandWatermarx}
-            initial={{ opacity: 0, rotate: -15, scale: 0.8 }}
-            animate={{ opacity: 0.15, rotate: 0, scale: 1 }}
-            transition={{ duration: 1.5, ease: "easeOut" }}
-          >
-            {/* <BrandStar /> */}
-          </motion.div>
+  
           <div className={styles.overlay}></div>
         </div>
 
@@ -66,19 +59,13 @@ export default function Hero() {
 
           </motion.div>
         </div>
-        {/* <div className={styles.buttons}>
+        <div className={styles.buttons}>
           <motion.div variants={itemVariants} className={styles.actions}>
             <Button href="/contact" variant="primary">
               {t('ctaPrimary', {default: 'Discuss Your Project'})}
             </Button>
-            <Image
-              src="/images/ISSO.logos"
-              alt="Logo"
-              width={200}
-              height={55}
-            />
           </motion.div>
-        </div> */}
+        </div>
       </div>
     </section>
   );

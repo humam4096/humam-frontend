@@ -82,6 +82,15 @@ export default function Navbar() {
               {t('services')}
             </Link>
           </li>
+          <li>
+            <Link 
+              href="/activities" 
+              className={pathname === '/activities' ? styles.active : ''}
+              aria-current={pathname === '/activities' ? 'page' : undefined}
+            >
+              {t('activities')}
+            </Link>
+          </li>
           {/* <li><Link href="/industries">{t('industries')}</Link></li> */}
           <li>
             <Link 
@@ -170,6 +179,16 @@ export default function Navbar() {
               aria-current={pathname === '/services' ? 'page' : undefined}
             >
               {t('services')}
+            </Link>
+          </li>
+          <li>
+            <Link 
+              href="/activities" 
+              onClick={() => setIsMenuOpen(false)}
+              className={pathname === '/activities' ? styles.active : ''}
+              aria-current={pathname === '/activities' ? 'page' : undefined}
+            >
+              {t('activities')}
             </Link>
           </li>
           <li>

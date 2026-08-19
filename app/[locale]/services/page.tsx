@@ -33,7 +33,7 @@ function ServicesContent() {
         cta={t('consultancy.cta')}
         href="/services/consultancy"
         benefits={consultancyBenefits}
-        imageSrc="/images/services/consultation-bg-image.jpg"
+        imageSrc="/images/services/humam-services-image/humam-business-development.webp"
         imageAlt={t('consultancy.title')}
         accent="green"
       />
@@ -46,7 +46,7 @@ function ServicesContent() {
         cta={t('quality.cta')}
         href="/services/quality"
         benefits={qualityBenefits}
-        imageSrc="/images/services/quality-bg-image.jpg"
+        imageSrc="/images/services/humam-services-image/humam-quality.webp"
         imageAlt={t('quality.title')}
         accent="burgundy"
         reverse
@@ -60,7 +60,7 @@ function ServicesContent() {
         cta={t('training.cta')}
         href="/services/training"
         benefits={trainingBenefits}
-        imageSrc="/images/services/training-bg-image.jpg"
+        imageSrc="/images/services/humam-services-image/humam-training.webp"
         imageAlt={t('training.title')}
         accent="mustard"
       />
