@@ -27,8 +27,8 @@
 	],
 	"r2_buckets": [
 		{
-			"bucket_name": "humam-website-cache",
-			"binding": "humam_website_cache"
+			"binding": "NEXT_INC_CACHE_R2_BUCKET",
+			"bucket_name": "humam-website-cache"
 		}
 	]
 }
