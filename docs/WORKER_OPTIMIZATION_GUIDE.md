@@ -7,12 +7,7 @@
 - **What**: Uncommented R2 cache to store rendered pages at the edge
 - **Impact**: Prevents regenerating pages on every refresh, drastically reducing memory usage
 
-### 2. **Removed Axios Dependency** (High Impact)
-- **File**: `components/sections/Contact.tsx`
-- **What**: Replaced axios with native `fetch` API
-- **Impact**: Reduces bundle size by ~100KB, less memory footprint
-
-### 3. **Next.js Build Optimizations** (Medium Impact)
+### 2. **Next.js Build Optimizations** (Medium Impact)
 - **File**: `next.config.mjs`
 - **What**: Enabled:
   - `inlineCss: true` - Reduces CSS bundle size
@@ -46,14 +41,7 @@ Add the R2 bucket binding to your `wrangler.jsonc`:
 }
 ```
 
-### Step 3: Remove Axios from package.json
-Since we replaced axios with fetch, uninstall it:
-
-```bash
-npm uninstall axios
-```
-
-### Step 4: Rebuild and Deploy
+### Step 3: Rebuild and Deploy
 
 ```bash
 npm run build
