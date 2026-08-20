@@ -13,8 +13,19 @@ const nextConfig = {
   typedRoutes: true,
   experimental: {
     webpackBuildWorker: false,
-    inlineCss: false
-  }
+    // Enable inline CSS to reduce bundle size
+    inlineCss: true
+  },
+  // Optimize images for Workers
+  images: {
+    formats: ['image/avif', 'image/webp'],
+    minimumCacheTTL: 60,
+  },
+  // Reduce bundle size
+  compress: true,
+  // Enable production optimizations
+  productionBrowserSourceMaps: false,
+  swcMinify: true,
 };
 
 export default withNextIntl(nextConfig);
