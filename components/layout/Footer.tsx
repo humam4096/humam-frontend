@@ -67,13 +67,13 @@ export default function Footer() {
 
           <div className={styles.socialIcons}>
             <a href="https://www.snapchat.com/@humamksa" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={styles.icon}>
+              <svg width="24" height="24" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={styles.icon}>
                 <path d="M12 2c-3.3 0-5.6 2.6-5.6 6.1v2.1c0 .3-.2.5-.4.6l-2.3 1c-.3.1-.4.5-.2.8.5.7 1.5 1.1 2.2 1.3-.1.4-.3.9-.5 1.3-.1.3.1.6.4.6.5.1 1 .1 1.4.2.1.4.2.9.4 1.3.4.9 2 1.5 4.6 1.5s4.2-.6 4.6-1.5c.2-.4.3-.9.4-1.3.4-.1.9-.1 1.4-.2.3 0 .5-.3.4-.6-.2-.4-.4-.9-.5-1.3.7-.2 1.7-.6 2.2-1.3.2-.3.1-.7-.2-.8l-2.3-1c-.2-.1-.4-.3-.4-.6V8.1C17.6 4.6 15.3 2 12 2z"></path>
               </svg>
             </a>
             <a href="https://x.com/Humamksa" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={styles.icon}>
-                <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+              <svg width="24" height="24" viewBox="0 0 26 26" fill="currentColor" className={styles.icon}>
+                <path d="M18.9 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"></path>
               </svg>
             </a>
             <a href="https://www.instagram.com/humamksa" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
