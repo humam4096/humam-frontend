@@ -414,3 +414,204 @@
   flex-direction: column;
   gap: 1rem;
 }
+
+
+/* User Menu Styles */
+.userMenu {
+  position: relative;
+}
+
+.userButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: rgba(131, 157, 120, 0.08);
+  border: 1px solid var(--color-brand-olive);
+  border-radius: 99px;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--color-brand-dark-olive);
+  transition: all 0.2s ease;
+}
+
+.userButton:hover {
+  background-color: var(--color-brand-olive);
+  color: var(--color-light-cream);
+}
+
+.userName {
+  font-weight: 600;
+}
+
+.userRole {
+  opacity: 0.8;
+  font-size: 0.85rem;
+}
+
+.userMenuOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 40;
+}
+
+.userMenuDropdown {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  min-width: 180px;
+  background-color: var(--color-white);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  z-index: 50;
+  overflow: hidden;
+  animation: slideIn 0.2s ease;
+}
+
+[dir="rtl"] .userMenuDropdown {
+  right: auto;
+  left: 0;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.userMenuItem {
+  display: block;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border: none;
+  background: none;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-brand-dark);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+[dir="rtl"] .userMenuItem {
+  text-align: right;
+}
+
+.userMenuItem:hover {
+  background-color: var(--color-brand-olive);
+  color: var(--color-light-cream);
+}
+
+.loginButton {
+  padding: 0.5rem 1rem;
+  background-color: transparent;
+  border: 1px solid var(--color-brand-dark-olive);
+  border-radius: 99px;
+  color: var(--color-brand-dark-olive);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+
+.loginButton:hover {
+  background-color: var(--color-brand-dark-olive);
+  color: var(--color-light-cream);
+}
+
+/* Mobile User Info */
+.mobileUserInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-top: 1rem;
+}
+
+.mobileUserDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 1rem;
+  background-color: rgba(131, 157, 120, 0.08);
+  border-radius: 12px;
+}
+
+.mobileUserName {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-brand-dark-olive);
+}
+
+.mobileUserRole {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--color-brand-green);
+  opacity: 0.8;
+}
+
+.mobileDashboardLink {
+  padding: 0.75rem 1rem;
+  background-color: var(--color-brand-olive);
+  color: var(--color-light-cream);
+  border-radius: 12px;
+  text-align: center;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.mobileDashboardLink:hover {
+  background-color: var(--color-brand-dark-olive);
+}
+
+.mobileLogoutButton {
+  padding: 0.75rem 1rem;
+  background-color: transparent;
+  border: 1px solid var(--color-brand-red);
+  border-radius: 12px;
+  color: var(--color-brand-red);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mobileLogoutButton:hover {
+  background-color: var(--color-brand-red);
+  color: var(--color-light-cream);
+}
+
+.mobileLoginButton {
+  padding: 0.75rem 1rem;
+  background-color: var(--color-brand-dark-olive);
+  color: var(--color-light-cream);
+  border-radius: 12px;
+  text-align: center;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.mobileLoginButton:hover {
+  background-color: var(--color-brand-olive);
+}

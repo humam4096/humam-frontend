@@ -1,6 +1,6 @@
 'use client';
 
-import {useAuth} from '@/hooks/useAuth';
+import {useAuth} from '@/contexts/AuthContext';
 
 export default function DashboardOverview() {
   const {user, loading} = useAuth();

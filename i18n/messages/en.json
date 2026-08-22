@@ -16,7 +16,9 @@
     "industries": "Industries",
     "training": "Training Center",
     "contact": "Contact",
-    "login": "Client Portal"
+    "login": "Client Portal",
+    "dashboard": "Dashboard",
+    "logout": "Logout"
   },
   "About": {
     "eyebrow": "Our Story",
@@ -605,6 +607,27 @@
           "category": "Training"
         }
       }
+    }
+  },
+  "LoginPage": {
+    "title": "Client Portal",
+    "subtitle": "Access your dashboard and project information",
+    "form": {
+      "email": "Email",
+      "emailPlaceholder": "your@email.com",
+      "password": "Password",
+      "passwordPlaceholder": "Enter your password",
+      "submit": "Sign In",
+      "submitting": "Signing in..."
+    },
+    "errors": {
+      "invalid": "Invalid email or password",
+      "required": "This field is required",
+      "invalidEmail": "Please enter a valid email address"
+    },
+    "footer": {
+      "contact": "Need access?",
+      "contactLink": "Contact us"
     }
   }
 }
