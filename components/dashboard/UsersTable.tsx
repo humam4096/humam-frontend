@@ -4,7 +4,8 @@ import {useMemo} from 'react';
 import {tableFeatures, useTable} from '@tanstack/react-table';
 import type {ColumnDef} from '@tanstack/react-table';
 import type {User} from '@/lib/api/users';
-import styles from './UsersTable.module.css';
+import sharedStyles from '@/styles/shared-table.module.css';
+import customStyles from './UsersTable.module.css';
 
 // Define the features this table uses
 const features = tableFeatures({});
@@ -38,7 +39,7 @@ export function UsersTable({users}: UsersTableProps) {
         header: 'Role',
         cell: (info) => {
           const role = info.getValue<string>();
-          return <span className={`${styles.roleBadge} ${styles[role.toLowerCase()]}`}>{role}</span>;
+          return <span className={`${customStyles.roleBadge} ${customStyles[role.toLowerCase()]}`}>{role}</span>;
         },
       },
       {
@@ -47,9 +48,9 @@ export function UsersTable({users}: UsersTableProps) {
         cell: (info) => {
           const date = new Date(info.getValue<string>());
           return (
-            <div className={styles.dateCell}>
+            <div className={sharedStyles.dateCell}>
               <div>{date.toLocaleDateString()}</div>
-              <div className={styles.timeText}>{date.toLocaleTimeString()}</div>
+              <div className={sharedStyles.timeText}>{date.toLocaleTimeString()}</div>
             </div>
           );
         },
@@ -60,9 +61,9 @@ export function UsersTable({users}: UsersTableProps) {
         cell: (info) => {
           const date = new Date(info.getValue<string>());
           return (
-            <div className={styles.dateCell}>
+            <div className={sharedStyles.dateCell}>
               <div>{date.toLocaleDateString()}</div>
-              <div className={styles.timeText}>{date.toLocaleTimeString()}</div>
+              <div className={sharedStyles.timeText}>{date.toLocaleTimeString()}</div>
             </div>
           );
         },
@@ -80,25 +81,25 @@ export function UsersTable({users}: UsersTableProps) {
   });
 
   return (
-    <div className={styles.container}>
-      <div className={styles.tableWrapper}>
-        <table className={styles.table}>
-          <thead className={styles.thead}>
+    <div className={sharedStyles.container}>
+      <div className={sharedStyles.tableWrapper}>
+        <table className={sharedStyles.table}>
+          <thead className={sharedStyles.thead}>
             {table.getHeaderGroups().map((headerGroup) => (
               <tr key={headerGroup.id}>
                 {headerGroup.headers.map((header) => (
-                  <th key={header.id} className={styles.th}>
+                  <th key={header.id} className={sharedStyles.th}>
                     {header.isPlaceholder ? null : <table.FlexRender header={header} />}
                   </th>
                 ))}
               </tr>
             ))}
           </thead>
-          <tbody className={styles.tbody}>
+          <tbody>
             {table.getRowModel().rows.map((row) => (
-              <tr key={row.id} className={styles.tr}>
+              <tr key={row.id} className={sharedStyles.tr}>
                 {row.getAllCells().map((cell) => (
-                  <td key={cell.id} className={styles.td}>
+                  <td key={cell.id} className={sharedStyles.td}>
                     <table.FlexRender cell={cell} />
                   </td>
                 ))}

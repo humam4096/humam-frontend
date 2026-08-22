@@ -6,20 +6,27 @@ import type {ColumnDef} from '@tanstack/react-table';
 import type {Contact} from '@/db/schema';
 import {StatusBadge} from '@/components/ui/StatusBadge';
 import {MessageDetailModal} from './MessageDetailModal';
-import styles from './MessagesTable.module.css';
+import sharedStyles from '@/styles/shared-table.module.css';
+import customStyles from './MessagesTable.module.css';
 
 // Define the features this table uses
 const features = tableFeatures({});
 
 interface MessagesTableProps {
   messages: Contact[];
+  onStatusUpdate?: (id: number, status: 'new' | 'read' | 'replied') => void;
 }
 
-export function MessagesTable({messages}: MessagesTableProps) {
+export function MessagesTable({messages, onStatusUpdate}: MessagesTableProps) {
   const [selectedMessage, setSelectedMessage] = useState<Contact | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleViewMessage = (message: Contact) => {
+    // Mark as read if it's currently 'new'
+    if (message.status === 'new' && onStatusUpdate) {
+      onStatusUpdate(message.id, 'read');
+    }
+    
     setSelectedMessage(message);
     setIsModalOpen(true);
   };
@@ -64,9 +71,9 @@ export function MessagesTable({messages}: MessagesTableProps) {
         cell: (info) => {
           const date = new Date(info.getValue<string>());
           return (
-            <div className={styles.dateCell}>
+            <div className={sharedStyles.dateCell}>
               <div>{date.toLocaleDateString()}</div>
-              <div className={styles.timeText}>{date.toLocaleTimeString()}</div>
+              <div className={sharedStyles.timeText}>{date.toLocaleTimeString()}</div>
             </div>
           );
         },
@@ -77,7 +84,7 @@ export function MessagesTable({messages}: MessagesTableProps) {
         cell: (info) => (
           <button
             onClick={() => handleViewMessage(info.row.original)}
-            className={styles.actionButton}
+            className={sharedStyles.actionButton}
             aria-label="View message details"
           >
             View
@@ -99,25 +106,28 @@ export function MessagesTable({messages}: MessagesTableProps) {
 
   return (
     <>
-      <div className={styles.container}>
-        <div className={styles.tableWrapper}>
-          <table className={styles.table}>
-            <thead className={styles.thead}>
+      <div className={sharedStyles.container}>
+        <div className={sharedStyles.tableWrapper}>
+          <table className={sharedStyles.table}>
+            <thead className={sharedStyles.thead}>
               {table.getHeaderGroups().map((headerGroup) => (
                 <tr key={headerGroup.id}>
                   {headerGroup.headers.map((header) => (
-                    <th key={header.id} className={styles.th}>
+                    <th key={header.id} className={sharedStyles.th}>
                       {header.isPlaceholder ? null : <table.FlexRender header={header} />}
                     </th>
                   ))}
                 </tr>
               ))}
             </thead>
-            <tbody className={styles.tbody}>
+            <tbody>
               {table.getRowModel().rows.map((row) => (
-                <tr key={row.id} className={styles.tr}>
+                <tr 
+                  key={row.id} 
+                  className={`${sharedStyles.tr} ${row.original.status === 'new' ? customStyles.trNew : customStyles.trRead}`}
+                >
                   {row.getAllCells().map((cell) => (
-                    <td key={cell.id} className={styles.td}>
+                    <td key={cell.id} className={sharedStyles.td}>
                       <table.FlexRender cell={cell} />
                     </td>
                   ))}

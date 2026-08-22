@@ -11,7 +11,7 @@ import styles from './page.module.css';
 export default function MessagesPage() {
   const {user, loading: authLoading} = useAuth();
   const router = useRouter();
-  const {messages, loading, error} = useMessages();
+  const {messages, loading, error, updateStatus} = useMessages();
 
   useEffect(() => {
     if (!authLoading && user && !hasAccess(user.role, ['CLIENT', 'ADMIN'])) {
@@ -42,7 +42,9 @@ export default function MessagesPage() {
         <div className={styles.emptyState}>No messages found.</div>
       )}
 
-      {!loading && !error && messages.length > 0 && <MessagesTable messages={messages} />}
+      {!loading && !error && messages.length > 0 && (
+        <MessagesTable messages={messages} onStatusUpdate={updateStatus} />
+      )}
     </div>
   );
 }
