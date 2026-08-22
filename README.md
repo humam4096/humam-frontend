@@ -19,6 +19,7 @@ Visit `http://localhost:3000`
 ### For Developers
 
 - **[DEVELOPMENT.md](./DEVELOPMENT.md)** - Quick start guide for local development
+- **[DATABASE.md](./DATABASE.md)** - Database setup & configuration guide
 - **[docs/BACKEND.md](./docs/BACKEND.md)** - Complete backend architecture & implementation guide
 - **[docs/API.md](./docs/API.md)** - API reference with examples
 - **[docs/DEPLOYMENT.md](./docs/DEPLOYMENT.md)** - Deployment procedures & checklist
@@ -28,6 +29,7 @@ Visit `http://localhost:3000`
 | I want to...                      | Read this                                    |
 |-----------------------------------|----------------------------------------------|
 | Set up local environment          | [DEVELOPMENT.md](./DEVELOPMENT.md)           |
+| Configure the database            | [DATABASE.md](./DATABASE.md)                 |
 | Understand the backend            | [docs/BACKEND.md](./docs/BACKEND.md)         |
 | Use the API                       | [docs/API.md](./docs/API.md)                 |
 | Deploy to production              | [docs/DEPLOYMENT.md](./docs/DEPLOYMENT.md)   |
@@ -110,7 +112,7 @@ humam-server/
 
 ```bash
 # Development
-npm run dev              # Start dev server with Turbopack
+npm run dev              # Start dev server with Turbopack (uses local DB)
 npm run build            # Build for production
 npm run start            # Start production server
 
@@ -119,12 +121,17 @@ npm run lint             # Run ESLint
 
 # Deployment
 npm run preview          # Build and preview locally
-npm run deploy           # Deploy to Cloudflare
+npm run deploy           # Deploy to production (uses wrangler.prod.jsonc)
+npm run deploy:migrations # Apply migrations to production database
 npm run upload           # Upload for gradual deployment
 
-# Database
-npx drizzle-kit generate # Generate migration
-npx wrangler d1 migrations apply humam-contact-db  # Apply migrations
+# Database (Local)
+npx wrangler d1 migrations apply humam-contact-db --local  # Apply migrations locally
+npx wrangler d1 execute humam-contact-db --local --command "SELECT * FROM contacts;"  # Query local DB
+
+# Database (Production)
+npm run deploy:migrations # Apply migrations to production
+npx drizzle-kit generate  # Generate new migration from schema changes
 ```
 
 ## 🗄️ Database Schema

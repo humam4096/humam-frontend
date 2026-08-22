@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
-    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
+    "deploy": "opennextjs-cloudflare build && wrangler deploy --config wrangler.prod.jsonc",
+    "deploy:migrations": "wrangler d1 migrations apply humam-contact-db --remote --config wrangler.prod.jsonc",
     "upload": "opennextjs-cloudflare build && opennextjs-cloudflare upload"
   },
   "dependencies": {

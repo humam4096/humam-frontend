@@ -22,7 +22,7 @@
 			"database_name": "humam-contact-db",
 			"database_id": "588dbffc-4b97-4a5f-a95d-2d42f1b0ca6d",
 			"migrations_dir": "db/migrations",
-			"remote": false
+			"remote": true
 		}
 	],
 	"r2_buckets": [
