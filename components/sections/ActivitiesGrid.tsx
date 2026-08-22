@@ -58,7 +58,7 @@ export default function ActivitiesGrid() {
       title: t('activities.restaurant.title'),
       category: t('activities.restaurant.category'),
       description: t('activities.restaurant.description'),
-      image: '/images/activities/restaurant-setup.jpg',
+      image: '',
       slug: 'restaurant-launch',
     },
     {
@@ -66,7 +66,7 @@ export default function ActivitiesGrid() {
       title: t('activities.training.title'),
       category: t('activities.training.category'),
       description: t('activities.training.description'),
-      image: '/images/activities/chef-training.jpg',
+      image: '/',
       slug: 'chef-training',
     },
     {
@@ -74,7 +74,7 @@ export default function ActivitiesGrid() {
       title: t('activities.certification.title'),
       category: t('activities.certification.category'),
       description: t('activities.certification.description'),
-      image: '/images/activities/iso-certification.jpg',
+      image: '/',
       slug: 'iso-certification',
       featured: true,
 

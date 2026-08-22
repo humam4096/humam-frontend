@@ -1,7 +1,7 @@
 'use client';
 
 import {Link, usePathname} from '@/i18n/routing';
-import {useAuth} from '@/hooks/useAuth';
+import {useAuth} from '@/contexts/AuthContext';
 import styles from './Sidebar.module.css';
 
 export default function Sidebar() {

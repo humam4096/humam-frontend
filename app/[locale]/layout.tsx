@@ -3,6 +3,8 @@ import {getMessages, setRequestLocale} from 'next-intl/server';
 import {routing} from '@/i18n/routing';
 import {notFound} from 'next/navigation';
 import {Outfit, Inter, Tajawal} from 'next/font/google';
+import {AuthProvider} from '@/contexts/AuthContext';
+import {QueryProvider} from '@/providers/QueryProvider';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import PageTransition from '@/components/layout/PageTransition';
@@ -82,12 +84,16 @@ export default async function LocaleLayout({
       </head>
       <body>
         <NextIntlClientProvider messages={messages}>
-          <PageViewTracker />
-          <Navbar />
-          <PageTransition>
-            {children}
-          </PageTransition>
-          <ConditionalFooter />
+          <QueryProvider>
+            <AuthProvider>
+              <PageViewTracker />
+              <Navbar />
+              <PageTransition>
+                {children}
+              </PageTransition>
+              <ConditionalFooter />
+            </AuthProvider>
+          </QueryProvider>
         </NextIntlClientProvider>
       </body>
     </html>

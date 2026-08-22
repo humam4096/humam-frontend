@@ -14,5 +14,8 @@ export const contacts = sqliteTable("contacts", {
   createdAt: text("created_at").notNull().default(sql`CURRENT_TIMESTAMP`),
 });
 
+// Export authentication tables
+export { users, sessions, rateLimits } from "./schema-auth";
+
 export type Contact = typeof contacts.$inferSelect;
 export type NewContact = typeof contacts.$inferInsert;

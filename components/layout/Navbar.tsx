@@ -3,6 +3,7 @@
 import {useState, useEffect} from 'react';
 import {Link, usePathname} from '@/i18n/routing';
 import {useTranslations} from 'next-intl';
+import {useAuth} from '@/contexts/AuthContext';
 import LanguageSwitcher from './LanguageSwitcher';
 import styles from './Navbar.module.css';
 import Image from 'next/image';
@@ -10,8 +11,10 @@ import Image from 'next/image';
 export default function Navbar() {
   const t = useTranslations('Navbar');
   const pathname = usePathname();
+  const {user, logout} = useAuth();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
 
   // Handle scroll events for dynamic border
   useEffect(() => {
@@ -40,6 +43,12 @@ export default function Navbar() {
       document.body.style.overflow = 'unset';
     }
   }, [isMenuOpen]);
+
+  const handleLogout = async () => {
+    await logout();
+    setIsUserMenuOpen(false);
+    setIsMenuOpen(false);
+  };
 
   return (
     <nav className={`${styles.navbar} ${isScrolled ? styles.scrolled : ''}`}>
@@ -113,6 +122,48 @@ export default function Navbar() {
         </ul>
         <div className={styles.actions}>
           <LanguageSwitcher />
+          
+          {user ? (
+            <div className={styles.userMenu}>
+              <button 
+                className={styles.userButton}
+                onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
+                aria-label="User menu"
+                aria-expanded={isUserMenuOpen}
+              >
+                <span className={styles.userName}>{user.name}</span>
+                {/* <span className={styles.userRole}>({user.role})</span> */}
+              </button>
+              
+              {isUserMenuOpen && (
+                <>
+                  <div 
+                    className={styles.userMenuOverlay} 
+                    onClick={() => setIsUserMenuOpen(false)}
+                  />
+                  <div className={styles.userMenuDropdown}>
+                    <Link 
+                      href="/dashboard" 
+                      className={styles.userMenuItem}
+                      onClick={() => setIsUserMenuOpen(false)}
+                    >
+                      {t('dashboard')}
+                    </Link>
+                    <button 
+                      className={styles.userMenuItem}
+                      onClick={handleLogout}
+                    >
+                      {t('logout')}
+                    </button>
+                  </div>
+                </>
+              )}
+            </div>
+          ) : (
+            <Link href="/login" className={styles.loginButton}>
+              {t('login')}
+            </Link>
+          )}
         </div>
 
         {/* Mobile Hamburger Button */}
@@ -214,6 +265,36 @@ export default function Navbar() {
         </ul>
         <div className={styles.mobileActions}>
           <LanguageSwitcher />
+          
+          {user ? (
+            <div className={styles.mobileUserInfo}>
+              <div className={styles.mobileUserDetails}>
+                <span className={styles.mobileUserName}>{user.name}</span>
+                <span className={styles.mobileUserRole}>{user.role}</span>
+              </div>
+              <Link 
+                href="/dashboard" 
+                className={styles.mobileDashboardLink}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {t('dashboard')}
+              </Link>
+              <button 
+                className={styles.mobileLogoutButton}
+                onClick={handleLogout}
+              >
+                {t('logout')}
+              </button>
+            </div>
+          ) : (
+            <Link 
+              href="/login" 
+              className={styles.mobileLoginButton}
+              onClick={() => setIsMenuOpen(false)}
+            >
+              {t('login')}
+            </Link>
+          )}
         </div>
       </div>
     </nav>
