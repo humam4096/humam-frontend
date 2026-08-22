@@ -35,7 +35,7 @@ export function MessagesTable({messages}: MessagesTableProps) {
       {
         accessorKey: 'id',
         header: 'ID',
-        cell: (info) => info.getValue(),
+        cell: (info) => info.row.index + 1,
         size: 60,
       },
       {

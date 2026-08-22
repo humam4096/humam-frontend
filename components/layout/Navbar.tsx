@@ -132,7 +132,6 @@ export default function Navbar() {
                 aria-expanded={isUserMenuOpen}
               >
                 <span className={styles.userName}>{user.name}</span>
-                {/* <span className={styles.userRole}>({user.role})</span> */}
               </button>
               
               {isUserMenuOpen && (

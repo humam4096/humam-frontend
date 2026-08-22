@@ -11,8 +11,9 @@ export default function Sidebar() {
   if (loading) return <div className={styles.sidebar}>Loading...</div>;
 
   const links = [
-    {href: '/dashboard', label: 'Overview', roles: ['ADMIN', 'EDITOR', 'CLIENT']},
-    {href: '/dashboard/messages', label: 'Messages', roles: ['CLIENT', 'ADMIN']},
+    {href: '/dashboard', label: 'Overview', roles: ['ADMIN']},
+    {href: '/dashboard/messages', label: 'Messages', roles: ['ADMIN']},
+    {href: '/dashboard/users', label: 'Users', roles: ['ADMIN']},
   ];
 
   const visibleLinks = links.filter((link) => user?.role && link.roles.includes(user.role));

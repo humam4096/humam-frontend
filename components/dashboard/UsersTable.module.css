@@ -1,0 +1,93 @@
+.container {
+  width: 100%;
+}
+
+.tableWrapper {
+  overflow-x: auto;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.thead {
+  background-color: #f9fafb;
+}
+
+.th {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #374151;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.tbody {
+}
+
+.tr {
+  border-bottom: 1px solid #e5e7eb;
+  transition: background-color 0.15s;
+}
+
+.tr:hover {
+  background-color: #f9fafb;
+}
+
+.td {
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  color: #1f2937;
+}
+
+.idCell {
+  font-family: monospace;
+  font-size: 0.8rem;
+  color: #6b7280;
+  cursor: help;
+}
+
+.dateCell {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.timeText {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+.roleBadge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.roleBadge.admin {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+.roleBadge.editor {
+  background-color: #dbeafe;
+  color: #1e40af;
+}
+
+.roleBadge.client {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.roleBadge.guest {
+  background-color: #f3f4f6;
+  color: #374151;
+}
