@@ -30,7 +30,7 @@ export function getContactNotificationTemplate(data: ContactEmailData): string {
               
               <!-- Header with Logo -->
               <tr>
-                <td style="background: linear-gradient(135deg, #6e1c24 0%, #3e503a 100%); padding: 40px 30px; text-align: center;">
+                <td style="background: linear-gradient(135deg, #3e503a 0%, #3e503a 100%); padding: 40px 30px; text-align: center;">
                   <img src="https://humam.sa/images/brand/Humam-Logo.svg" alt="Humam Logo" width="120" height="120" style="display: block; margin: 0 auto 20px auto;" />
                   <h1 style="margin: 0; color: #ffffff; font-size: 28px; font-weight: 600; letter-spacing: -0.02em;">
                     New Contact Inquiry
@@ -149,7 +149,7 @@ export function getContactNotificationTemplate(data: ContactEmailData): string {
                   <table width="100%" cellpadding="0" cellspacing="0" style="margin-top: 32px;">
                     <tr>
                       <td align="center">
-                        <a href="mailto:${escapeHtml(data.email)}" style="display: inline-block; padding: 14px 32px; background: linear-gradient(135deg, #6e1c24 0%, #3e503a 100%); color: #ffffff; text-decoration: none; border-radius: 12px; font-weight: 600; font-size: 15px; letter-spacing: 0.3px;">
+                        <a href="mailto:${escapeHtml(data.email)}" style="display: inline-block; padding: 14px 32px; background: linear-gradient(135deg, #3e503a 0%, #3e503a 100%); color: #ffffff; text-decoration: none; border-radius: 12px; font-weight: 600; font-size: 15px; letter-spacing: 0.3px;">
                           Reply to ${escapeHtml(data.name.split(' ')[0])}
                         </a>
                       </td>
