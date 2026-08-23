@@ -30,5 +30,10 @@
 			"binding": "NEXT_INC_CACHE_R2_BUCKET",
 			"bucket_name": "humam-website-cache"
 		}
-	]
+	],	
+	"vars": {
+    "RESEND_FROM_EMAIL": "noreply@humam.sa",
+    "RESEND_TO_EMAIL": "humam4096@gmail.com"
+  }
+
 }
