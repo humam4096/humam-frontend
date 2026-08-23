@@ -5,13 +5,13 @@ import { Resend } from "resend";
  * Resend client singleton
  * Configured with API key from environment variables
  */
-export const resend = new Resend(process.env.RESEND_API_KEY);
+export const resend = new Resend(process.env.RESEND_API_KEY || "");
 
 /**
  * Email configuration
  */
 export const emailConfig = {
-  from: process.env.RESEND_FROM_EMAIL || "noreply@humam.sa",
+  from: `Humam website <${process.env.RESEND_FROM_EMAIL || "noreply@humam.sa"}>`,
   to: process.env.RESEND_TO_EMAIL || "humam4096@gmail.com",
 } as const;
 
