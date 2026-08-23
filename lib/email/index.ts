@@ -4,7 +4,7 @@
  * Centralized exports for email functionality
  */
 
-export { resend, emailConfig, validateEmailConfig } from "./resend";
+export { getResend, getEmailConfig, validateEmailConfig } from "./resend";
 
 export {
   sendContactNotification,

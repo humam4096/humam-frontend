@@ -35,5 +35,8 @@
     "RESEND_FROM_EMAIL": "noreply@humam.sa",
     "RESEND_TO_EMAIL": "humam4096@gmail.com"
   }
+  // Secrets (not committed to git):
+  // RESEND_API_KEY must be set as a Cloudflare secret for local dev
+  // Create a .dev.vars file with: RESEND_API_KEY=re_your_key_here
 
 }

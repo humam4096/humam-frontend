@@ -1,5 +1,5 @@
 // lib/email/send-contact-notification.ts
-import { resend, emailConfig, validateEmailConfig } from "./resend";
+import { getResend, getEmailConfig, validateEmailConfig } from "./resend";
 import {
   getContactNotificationTemplate,
   getContactNotificationText,
@@ -51,6 +51,10 @@ export async function sendContactNotification(
     // Generate email content
     const htmlContent = getContactNotificationTemplate(emailData);
     const textContent = getContactNotificationText(emailData);
+
+    // Get Resend client and email config
+    const resend = getResend();
+    const emailConfig = getEmailConfig();
 
     // Send email via Resend
     const result = await resend.emails.send({
