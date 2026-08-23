@@ -2,6 +2,7 @@
 import { getDb } from "@/db/client";
 import { contacts } from "@/db/schema";
 import { validateContactInput } from "@/lib/validation";
+import { sendContactNotificationSafe } from "@/lib/email";
 import { desc } from "drizzle-orm";
 
 export async function GET(req: Request) {
@@ -27,17 +28,38 @@ export async function GET(req: Request) {
 }
 
 export async function POST(req: Request) {
-  const body = await req.json().catch(() => null);
-  const data = validateContactInput(body);
+  try {
+    const body = await req.json().catch(() => null);
+    const data = validateContactInput(body);
 
+    if (!data) {
+      return Response.json({ error: "Invalid input" }, { status: 400 });
+    }
 
-  if (!data) {
-    return Response.json({ error: "Invalid input" }, { status: 400 });
+    const db = getDb();
+
+    // Save contact to database
+    await db.insert(contacts).values(data);
+
+    // Send email notification asynchronously (non-blocking)
+    // This runs in the background and doesn't delay the response
+    sendContactNotificationSafe({
+      name: data.name,
+      email: data.email,
+      company: data.company || undefined,
+      industry: data.industry || undefined,
+      service: data.service || undefined,
+      message: data.message,
+    }).catch((error) => {
+      // Log error but don't fail the request
+      console.error("Failed to send email notification:", error);
+    });
+
+    return Response.json({ success: true }, { status: 201 });
+  } catch (error) {
+    console.error("Error processing contact form:", error);
+    return Response.json({ 
+      error: "Failed to process contact form" 
+    }, { status: 500 });
   }
-
-  const db = getDb();
-
-  await db.insert(contacts).values(data);
-
-  return Response.json({ success: true }, { status: 201 });
 }
