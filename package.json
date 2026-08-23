@@ -2,15 +2,18 @@
   "name": "humam-website",
   "version": "0.1.0",
   "private": true,
-  "scripts": {
+    "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
-    "deploy": "opennextjs-cloudflare build && wrangler deploy --config wrangler.prod.jsonc",
-    "deploy:migrations": "wrangler d1 migrations apply humam-contact-db --remote --config wrangler.prod.jsonc",
-    "upload": "opennextjs-cloudflare build && opennextjs-cloudflare upload"
+    "preview": "opennextjs-cloudflare build && wrangler dev --env dev",
+    "deploy": "opennextjs-cloudflare build && wrangler deploy --env production",
+    "deploy:migrations": "wrangler d1 migrations apply humam-contact-db --remote --env production",
+    "deploy:dev": "opennextjs-cloudflare build && wrangler deploy --env dev",
+    "upload": "opennextjs-cloudflare build && opennextjs-cloudflare upload --env=\"\"",
+    "upload:dev": "opennextjs-cloudflare build && opennextjs-cloudflare upload --env=dev",
+    "upload:prod": "opennextjs-cloudflare build && opennextjs-cloudflare upload --env=production"
   },
   "dependencies": {
     "@opennextjs/cloudflare": "^1.20.2",

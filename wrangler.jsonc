@@ -1,7 +1,7 @@
 {
 	"$schema": "node_modules/wrangler/config-schema.json",
-	"main": ".open-next/worker.js",
 	"name": "humam-website",
+	"main": ".open-next/worker.js",
 	"compatibility_date": "2026-03-01",
 	"compatibility_flags": [
 		"nodejs_compat"
@@ -13,16 +13,27 @@
 	"images": {
 		"binding": "IMAGES"
 	},
-	"observability": {
-		"enabled": true
-	},
+  "observability": {
+    "enabled": false,
+    "head_sampling_rate": 1,
+    "logs": {
+      "enabled": true,
+      "head_sampling_rate": 1,
+      "persist": true,
+      "invocation_logs": true
+    },
+    "traces": {
+      "enabled": false,
+      "persist": true,
+      "head_sampling_rate": 1
+    }
+  },
 	"d1_databases": [
 		{
 			"binding": "DB",
 			"database_name": "humam-contact-db",
 			"database_id": "588dbffc-4b97-4a5f-a95d-2d42f1b0ca6d",
-			"migrations_dir": "db/migrations",
-			"remote": false
+			"migrations_dir": "db/migrations"
 		}
 	],
 	"r2_buckets": [
@@ -30,13 +41,71 @@
 			"binding": "NEXT_INC_CACHE_R2_BUCKET",
 			"bucket_name": "humam-website-cache"
 		}
-	],	
+	],
 	"vars": {
-    "RESEND_FROM_EMAIL": "noreply@humam.sa",
-    "RESEND_TO_EMAIL": "humam4096@gmail.com"
-  }
-  // Secrets (not committed to git):
-  // RESEND_API_KEY must be set as a Cloudflare secret for local dev
-  // Create a .dev.vars file with: RESEND_API_KEY=re_your_key_here
+		"RESEND_FROM_EMAIL": "noreply@humam.sa",
+		"RESEND_TO_EMAIL": "humam4096@gmail.com"
+	},
 
+	// Environments
+	"env": {
+		"dev": {
+			"name": "humam-website-dev",
+			"assets": {
+				"directory": ".open-next/assets",
+				"binding": "ASSETS"
+			},
+			"images": {
+				"binding": "IMAGES"
+			},
+			"vars": {
+				"RESEND_FROM_EMAIL": "noreply@humam.sa",
+				"RESEND_TO_EMAIL": "humam4096@gmail.com"
+			},
+			"d1_databases": [
+				{
+					"binding": "DB",
+					"database_name": "humam-db-dev",
+					"database_id": "e6564247-f505-44d6-b0e7-7cfe7a36233b",
+					"migrations_dir": "db/migrations",
+					"remote": true
+				}
+			],
+			"r2_buckets": [
+				{
+					"binding": "NEXT_INC_CACHE_R2_BUCKET",
+					"bucket_name": "humam-website-cache-dev"
+				}
+			]
+		},
+		"production": {
+			"name": "humam-website",
+			"assets": {
+				"directory": ".open-next/assets",
+				"binding": "ASSETS"
+			},
+			"images": {
+				"binding": "IMAGES"
+			},
+			"vars": {
+				"RESEND_FROM_EMAIL": "noreply@humam.sa",
+				"RESEND_TO_EMAIL": "humam4096@gmail.com"
+			},
+			"d1_databases": [
+				{
+					"binding": "DB",
+					"database_name": "humam-contact-db",
+					"database_id": "588dbffc-4b97-4a5f-a95d-2d42f1b0ca6d",
+					"migrations_dir": "db/migrations",
+					"remote": true
+				}
+			],
+			"r2_buckets": [
+				{
+					"binding": "NEXT_INC_CACHE_R2_BUCKET",
+					"bucket_name": "humam-website-cache"
+				}
+			]
+		}
+	}
 }
