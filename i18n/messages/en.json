@@ -396,6 +396,11 @@
       "invalidEmail": "Please enter a valid email address",
       "responseTime": "We respond within 24 hours",
       "secure": "Your information is kept confidential"
+    },
+    "modal": {
+      "thankYou": "Thank You!",
+      "message": "Your message has been received. Our team will get back to you within 24 hours.",
+      "close": "Close"
     }
   },
   "AboutPage": {
