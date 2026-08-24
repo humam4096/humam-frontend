@@ -38,9 +38,9 @@ RESEND_API_KEY=re_your_actual_key_here
 
 ### For Production Deployment
 
-#### Option 1: Using Wrangler CLI
+#### Option 1: Using Wrangler CLI (RECOMMENDED)
 ```bash
-# For production environment
+# Set secret for production environment
 wrangler secret put RESEND_API_KEY --env production
 
 # You'll be prompted to enter the secret value
@@ -50,13 +50,15 @@ wrangler secret put RESEND_API_KEY --env production
 #### Option 2: Using Cloudflare Dashboard
 1. Go to [Cloudflare Dashboard](https://dash.cloudflare.com/)
 2. Navigate to **Workers & Pages**
-3. Select your worker: `humam-website`
+3. Select your worker: `humam-website (production)`
 4. Go to **Settings** → **Variables**
 5. Click **Add variable**
 6. Select **Encrypt** (to make it a secret)
 7. Name: `RESEND_API_KEY`
 8. Value: `re_your_actual_key_here`
 9. Click **Save**
+
+**Note:** The project now uses a single `wrangler.jsonc` with environment sections (`dev` and `production`) instead of separate config files.
 
 ## Environment Variables Summary
 
@@ -96,8 +98,8 @@ wrangler dev
 
 ### Test Production
 ```bash
-npm run build
-wrangler deploy --config wrangler.prod.jsonc
+npm run deploy
+# This runs: opennextjs-cloudflare build && wrangler deploy --env production
 # Send a test contact form submission
 ```
 

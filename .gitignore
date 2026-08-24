@@ -33,6 +33,10 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+.dev.vars
+.env
+.env.*
+!.env.example
 
 # vercel
 .vercel
@@ -48,3 +52,4 @@ next-env.d.ts
 
 # OpenNext build output
 .open-next/
+.dev.vars
