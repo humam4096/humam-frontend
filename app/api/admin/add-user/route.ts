@@ -19,23 +19,23 @@ export async function POST(request: Request) {
   try {
     // Check if user is authenticated and is an ADMIN
     const cookieStore = await cookies();
-    // const sessionToken = cookieStore.get('humam_session')?.value;
+    const sessionToken = cookieStore.get('humam_session')?.value;
 
-    // if (!sessionToken) {
-    //   return NextResponse.json(
-    //     { error: 'Authentication required' },
-    //     { status: 401 }
-    //   );
-    // }
+    if (!sessionToken) {
+      return NextResponse.json(
+        { error: 'Authentication required' },
+        { status: 401 }
+      );
+    }
 
-    // const currentUser = await validateSession(sessionToken);
+    const currentUser = await validateSession(sessionToken);
 
-    // if (!currentUser || currentUser.role !== 'ADMIN') {
-    //   return NextResponse.json(
-    //     { error: 'Admin access required to add users' },
-    //     { status: 403 }
-    //   );
-    // }
+    if (!currentUser || currentUser.role !== 'ADMIN') {
+      return NextResponse.json(
+        { error: 'Admin access required to add users' },
+        { status: 403 }
+      );
+    }
 
     // Rate limiting
     const clientIp = getClientIp(request);

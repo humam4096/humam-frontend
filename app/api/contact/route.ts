@@ -4,6 +4,7 @@ import { contacts } from "@/db/schema";
 import { validateContactInput } from "@/lib/validation";
 import { sendContactNotificationSafe } from "@/lib/email";
 import { desc } from "drizzle-orm";
+import { getCloudflareContext } from "@opennextjs/cloudflare";
 
 export async function GET(req: Request) {
   try {
@@ -40,20 +41,38 @@ export async function POST(req: Request) {
 
     // Save contact to database
     await db.insert(contacts).values(data);
+    console.log("✅ Contact saved to database:", data.email);
 
-    // Send email notification asynchronously (non-blocking)
-    // This runs in the background and doesn't delay the response
-    sendContactNotificationSafe({
-      name: data.name,
-      email: data.email,
-      company: data.company || undefined,
-      industry: data.industry || undefined,
-      service: data.service || undefined,
-      message: data.message,
-    }).catch((error) => {
-      // Log error but don't fail the request
-      console.error("Failed to send email notification:", error);
-    });
+    // Send email notification asynchronously using Cloudflare's waitUntil
+    try {
+      const { ctx } = getCloudflareContext();
+      console.log("📧 Queueing email notification with waitUntil...");
+      
+      const emailPromise = sendContactNotificationSafe({
+        name: data.name,
+        email: data.email,
+        company: data.company || undefined,
+        industry: data.industry || undefined,
+        service: data.service || undefined,
+        message: data.message,
+      });
+      
+      ctx.waitUntil(emailPromise);
+      console.log("✅ Email task queued successfully");
+    } catch (contextError) {
+      // Fallback for local Next.js dev (non-Cloudflare runtime)
+      console.warn("⚠️ Cloudflare context not available, using fallback");
+      sendContactNotificationSafe({
+        name: data.name,
+        email: data.email,
+        company: data.company || undefined,
+        industry: data.industry || undefined,
+        service: data.service || undefined,
+        message: data.message,
+      }).catch((error) => {
+        console.error("Failed to send email notification:", error);
+      });
+    }
 
     return Response.json({ success: true }, { status: 201 });
   } catch (error) {
