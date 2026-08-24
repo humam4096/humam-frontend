@@ -67,7 +67,7 @@ export function getEmailConfig() {
   const env = getEnv();
   
   return {
-    from: env.RESEND_FROM_EMAIL || "Humam website <noreply@humam.sa>",
+    from: `Humam website <${process.env.RESEND_FROM_EMAIL || "noreply@humam.sa"}>`,
     to: env.RESEND_TO_EMAIL || "humam4096@gmail.com",
   } as const;
 }
