@@ -3,7 +3,10 @@ import createNextIntlPlugin from 'next-intl/plugin';
 
 // Initialize OpenNext Cloudflare for development
 // This enables getCloudflareContext() to work with `next dev`
-await initOpenNextCloudflareForDev();
+// Only initialize in development mode, not during CI/production builds
+if (process.env.NODE_ENV === 'development') {
+  await initOpenNextCloudflareForDev();
+}
 
 const withNextIntl = createNextIntlPlugin('./i18n/request.ts');
 
