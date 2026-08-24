@@ -67,7 +67,7 @@ export function getEmailConfig() {
   const env = getEnv();
   
   return {
-    from: env.RESEND_FROM_EMAIL || "noreply@humam.sa",
+    from: env.RESEND_FROM_EMAIL || "Humam website <noreply@humam.sa>",
     to: env.RESEND_TO_EMAIL || "humam4096@gmail.com",
   } as const;
 }
@@ -89,7 +89,7 @@ export function validateEmailConfig(): void {
   }
 
   if (!env.RESEND_FROM_EMAIL) {
-    console.warn("RESEND_FROM_EMAIL not set, using default: noreply@humam.sa");
+    console.warn("RESEND_FROM_EMAIL not set, using default: Humam website <noreply@humam.sa>");
   }
 
   if (!env.RESEND_TO_EMAIL) {
