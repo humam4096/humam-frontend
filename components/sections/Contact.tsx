@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import axios from 'axios';
 import { ContactFormResponse } from '@/types/contact';
+import SuccessModal from '@/components/modals/SuccessModal';
 import styles from './Contact.module.css';
 
 // Industries we serve
@@ -38,6 +39,7 @@ export default function Contact() {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
   
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -67,7 +69,8 @@ export default function Contact() {
       console.log(response)
       
       if (response.data.success) {
-        setSubmitMessage({ type: 'success', text: response.data.message || 'Thank you! We will contact you soon.' });
+        // Show success modal instead of inline message
+        setShowSuccessModal(true);
         // Reset form
         setFormData({
           name: '',
@@ -92,7 +95,13 @@ export default function Contact() {
   };
 
   return (
-    <section className={styles.section}>
+    <>
+      <SuccessModal 
+        isOpen={showSuccessModal} 
+        onClose={() => setShowSuccessModal(false)} 
+      />
+      
+      <section className={styles.section}>
       <div className={`container ${styles.grid}`}>
         
         {/* Left Column: Content */}
@@ -247,5 +256,6 @@ export default function Contact() {
 
       </div>
     </section>
+    </>
   );
 }
