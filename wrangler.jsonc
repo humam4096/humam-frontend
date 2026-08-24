@@ -13,27 +13,28 @@
 	"images": {
 		"binding": "IMAGES"
 	},
-  "observability": {
-    "enabled": false,
-    "head_sampling_rate": 1,
-    "logs": {
-      "enabled": true,
-      "head_sampling_rate": 1,
-      "persist": true,
-      "invocation_logs": true
-    },
-    "traces": {
-      "enabled": false,
-      "persist": true,
-      "head_sampling_rate": 1
-    }
-  },
+	"observability": {
+		"enabled": false,
+		"head_sampling_rate": 1,
+		"logs": {
+			"enabled": true,
+			"head_sampling_rate": 1,
+			"persist": true,
+			"invocation_logs": true
+		},
+		"traces": {
+			"enabled": false,
+			"persist": true,
+			"head_sampling_rate": 1
+		}
+	},
 	"d1_databases": [
 		{
 			"binding": "DB",
-			"database_name": "humam-contact-db",
-			"database_id": "588dbffc-4b97-4a5f-a95d-2d42f1b0ca6d",
-			"migrations_dir": "db/migrations"
+			"database_name": "humam-db",
+			"database_id": "e0de4527-3938-4852-90c5-891b0e40129e",
+			"migrations_dir": "db/migrations",
+			"remote": true
 		}
 	],
 	"r2_buckets": [
@@ -46,38 +47,8 @@
 		"RESEND_FROM_EMAIL": "noreply@humam.sa",
 		"RESEND_TO_EMAIL": "humam4096@gmail.com"
 	},
-
 	// Environments
 	"env": {
-		"dev": {
-			"name": "humam-website-dev",
-			"assets": {
-				"directory": ".open-next/assets",
-				"binding": "ASSETS"
-			},
-			"images": {
-				"binding": "IMAGES"
-			},
-			"vars": {
-				"RESEND_FROM_EMAIL": "noreply@humam.sa",
-				"RESEND_TO_EMAIL": "humam4096@gmail.com"
-			},
-			"d1_databases": [
-				{
-					"binding": "DB",
-					"database_name": "humam-db-dev",
-					"database_id": "e6564247-f505-44d6-b0e7-7cfe7a36233b",
-					"migrations_dir": "db/migrations",
-					"remote": true
-				}
-			],
-			"r2_buckets": [
-				{
-					"binding": "NEXT_INC_CACHE_R2_BUCKET",
-					"bucket_name": "humam-website-cache-dev"
-				}
-			]
-		},
 		"production": {
 			"name": "humam-website",
 			"assets": {
@@ -94,8 +65,8 @@
 			"d1_databases": [
 				{
 					"binding": "DB",
-					"database_name": "humam-contact-db",
-					"database_id": "588dbffc-4b97-4a5f-a95d-2d42f1b0ca6d",
+					"database_name": "humam-db",
+					"database_id": "e0de4527-3938-4852-90c5-891b0e40129e",
 					"migrations_dir": "db/migrations",
 					"remote": true
 				}
