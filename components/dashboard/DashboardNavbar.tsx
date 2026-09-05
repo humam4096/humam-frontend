@@ -60,6 +60,21 @@ export default function DashboardNavbar({onMenuToggle}: DashboardNavbarProps) {
               />
             </svg>
           </button>
+          
+          {/* Home Icon */}
+          <Link href="/" className={styles.iconButton} title="Messages">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-label="Home"
+            >
+              <path d="M12 3L2 11H5V21H10V15H14V21H19V11H22L12 3Z"/>
+            </svg>
+          </Link>
+
         </div>
 
         {/* Right side - Actions */}

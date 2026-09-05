@@ -18,8 +18,8 @@ export default function Sidebar({isOpen, onClose}: SidebarProps) {
 
   const links = [
     {href: '/dashboard', label: 'Overview', roles: ['ADMIN']},
-    {href: '/dashboard/messages', label: 'Messages', roles: ['ADMIN']},
     {href: '/dashboard/users', label: 'Users', roles: ['ADMIN']},
+    {href: '/dashboard/messages', label: 'Messages', roles: ['ADMIN']},
   ];
 
   const visibleLinks = links.filter((link) => user?.role && link.roles.includes(user.role));
