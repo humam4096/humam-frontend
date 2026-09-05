@@ -34,7 +34,7 @@
 			"database_name": "humam-db",
 			"database_id": "e0de4527-3938-4852-90c5-891b0e40129e",
 			"migrations_dir": "db/migrations",
-			"remote": true
+			"remote": false
 		}
 	],
 	"r2_buckets": [

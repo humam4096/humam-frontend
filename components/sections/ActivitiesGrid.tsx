@@ -2,19 +2,11 @@
 
 import {useTranslations} from 'next-intl';
 import {Link} from '@/i18n/routing';
+import Image from 'next/image';
 import styles from './ActivitiesGrid.module.css';
 import {motion} from 'framer-motion';
 import {BrandStar} from '@/components/brand/BrandStar';
-
-interface Activity {
-  id: string;
-  title: string;
-  category: string;
-  description: string;
-  image: string;
-  slug: string;
-  featured?: boolean;
-}
+import {getActivityListItems, type ActivityListItem} from '@/data/activities';
 
 export default function ActivitiesGrid() {
   const t = useTranslations('ActivitiesPage.grid');
@@ -41,59 +33,12 @@ export default function ActivitiesGrid() {
     },
   };
 
-  // Sample activities - replace with actual data
-  const activities: Activity[] = [
-    {
-      id: '1',
-      title: t('activities.hajj.title'),
-      category: t('activities.hajj.category'),
-      description: t('activities.hajj.description'),
-      image: '/images/activities/hajj-humam/activity-hajj8.webp',
-      slug: 'hajj-catering',
-      featured: true,
-    },
-    {
-
-      id: '2',
-      title: t('activities.restaurant.title'),
-      category: t('activities.restaurant.category'),
-      description: t('activities.restaurant.description'),
-      image: '',
-      slug: 'restaurant-launch',
-    },
-    {
-      id: '3',
-      title: t('activities.training.title'),
-      category: t('activities.training.category'),
-      description: t('activities.training.description'),
-      image: '/',
-      slug: 'chef-training',
-    },
-    {
-      id: '4',
-      title: t('activities.certification.title'),
-      category: t('activities.certification.category'),
-      description: t('activities.certification.description'),
-      image: '/',
-      slug: 'iso-certification',
-      featured: true,
-
-    },
-  ];
+  // Get activities from centralized data
+  const activities: ActivityListItem[] = getActivityListItems();
 
   return (
     <section className={styles.gridSection}>
       <div className="container">
-        <motion.div
-          initial={{opacity: 0, y: 20}}
-          whileInView={{opacity: 1, y: 0}}
-          viewport={{once: true, margin: '-10%'}}
-          transition={{duration: 0.8, ease: [0.25, 1, 0.5, 1] as const}}
-          className={styles.header}
-        >
-          <span className="eyebrow">{t('eyebrow')}</span>
-          <h2>{t('title')}</h2>
-        </motion.div>
 
         <motion.div
           variants={containerVariants}
@@ -109,7 +54,19 @@ export default function ActivitiesGrid() {
               className={`${styles.cardLink} ${activity.featured ? styles.featured : ''}`}
             >
               <motion.div variants={cardVariants} className={`card ${styles.card}`}>
-                <div className={styles.cardBackground} style={{backgroundImage: `url('${activity.image}')`}}></div>
+                <div className={styles.cardBackground}>
+                  <Image
+                    src={activity.image}
+                    alt={activity.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    style={{ objectFit: 'cover' }}
+                    placeholder={activity.blurDataURL ? 'blur' : 'empty'}
+                    blurDataURL={activity.blurDataURL}
+                    quality={85}
+                    priority={index === 0}
+                  />
+                </div>
                 <div className={styles.cardOverlay}></div>
                 <div className={styles.watermark} style={{
                   bottom: index % 2 === 0 ? '-20%' : '-15%',
@@ -128,12 +85,6 @@ export default function ActivitiesGrid() {
           ))}
         </motion.div>
 
-        {/* <div className={styles.cta}>
-          <p className={styles.ctaText}>{t('cta.text')}</p>
-          <button className={styles.ctaButton}>
-            {t('cta.button')}
-          </button>
-        </div> */}
       </div>
     </section>
   );
