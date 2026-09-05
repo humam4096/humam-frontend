@@ -2,7 +2,9 @@
 
 import {useTranslations} from 'next-intl';
 import {Link} from '@/i18n/routing';
+import Image from 'next/image';
 import styles from './RelatedActivities.module.css';
+import {getRelatedActivities} from '@/data/activities';
 
 interface RelatedActivitiesProps {
   currentId: string;
@@ -11,25 +13,10 @@ interface RelatedActivitiesProps {
 export default function RelatedActivities({currentId}: RelatedActivitiesProps) {
   const t = useTranslations('ActivityDetail.related');
 
-  // Sample related activities - replace with actual data
-  const relatedActivities = [
-    {
-      id: 'factory-quality',
-      title: t('activities.factory.title'),
-      category: t('activities.factory.category'),
-      slug: 'factory-quality',
-    },
-    {
-      id: 'chef-training',
-      title: t('activities.training.title'),
-      category: t('activities.training.category'),
-      slug: 'chef-training',
-    },
-  ];
+  // Get related activities from centralized data
+  const relatedActivities = getRelatedActivities(currentId, 2);
 
-  const filtered = relatedActivities.filter(activity => activity.id !== currentId);
-
-  if (filtered.length === 0) {
+  if (relatedActivities.length === 0) {
     return null;
   }
 
@@ -41,29 +28,43 @@ export default function RelatedActivities({currentId}: RelatedActivitiesProps) {
         </div>
 
         <div className={styles.grid}>
-          {filtered.map((activity) => (
+          {relatedActivities.map((activity) => (
             <Link
               key={activity.id}
               href={`/activities/${activity.slug}`}
               className={styles.card}
             >
               <div className={styles.imageWrapper}>
-                <div className={styles.imagePlaceholder}>
-                  <div className={styles.placeholderIcon}>
-                    <svg
-                      width="48"
-                      height="48"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                    >
-                      <rect x="3" y="3" width="18" height="18" rx="2" />
-                      <circle cx="8.5" cy="8.5" r="1.5" />
-                      <path d="M21 15l-5-5L5 21" />
-                    </svg>
+                {activity.image ? (
+                  <Image
+                    src={activity.image}
+                    alt={activity.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    style={{ objectFit: 'cover' }}
+                    placeholder={activity.blurDataURL ? 'blur' : 'empty'}
+                    blurDataURL={activity.blurDataURL}
+                    quality={85}
+                    priority={false}
+                  />
+                ) : (
+                  <div className={styles.imagePlaceholder}>
+                    <div className={styles.placeholderIcon}>
+                      <svg
+                        width="48"
+                        height="48"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                      >
+                        <rect x="3" y="3" width="18" height="18" rx="2" />
+                        <circle cx="8.5" cy="8.5" r="1.5" />
+                        <path d="M21 15l-5-5L5 21" />
+                      </svg>
+                    </div>
                   </div>
-                </div>
+                )}
               </div>
               <div className={styles.cardContent}>
                 <span className={styles.category}>{activity.category}</span>

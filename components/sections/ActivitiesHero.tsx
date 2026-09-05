@@ -11,8 +11,8 @@ export default function ActivitiesHero() {
       <div className="container">
         <div className={styles.content}>
           <span className="eyebrow">{t('eyebrow')}</span>
-          <h1 className={styles.title}>{t('title')}</h1>
-          {/* <p className={styles.subtitle}>{t('subtitle')}</p> */}
+          <h2 className={styles.title}>{t('title')}</h2>
+          <p className={styles.subtitle}>{t('subtitle')}</p>
           <p className={styles.year}>{t('year')}</p>
         </div>
       </div>

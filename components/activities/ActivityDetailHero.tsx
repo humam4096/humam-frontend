@@ -28,7 +28,7 @@ export default function ActivityDetailHero({activity}: ActivityDetailHeroProps) 
 
         <div className={styles.content}>
           <span className={styles.category}>{activity.category}</span>
-          <h1 className={styles.title}>{activity.title}</h1>
+          <h2 className={styles.title}>{activity.title}</h2>
           <p className={styles.description}>{activity.description}</p>
         </div>
       </div>
