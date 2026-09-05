@@ -14,6 +14,18 @@ interface ActivityDetailHeroProps {
 
 export default function ActivityDetailHero({activity}: ActivityDetailHeroProps) {
   const t = useTranslations('ActivityDetail');
+  const tActivities = useTranslations();
+
+  // Translate the activity fields if they are translation keys
+  const translatedCategory = activity.category.startsWith('activities.') 
+    ? tActivities(activity.category) 
+    : activity.category;
+  const translatedTitle = activity.title.startsWith('activities.') 
+    ? tActivities(activity.title) 
+    : activity.title;
+  const translatedDescription = activity.description.startsWith('activities.') 
+    ? tActivities(activity.description) 
+    : activity.description;
 
   return (
     <section className={styles.hero}>
@@ -23,13 +35,13 @@ export default function ActivityDetailHero({activity}: ActivityDetailHeroProps) 
             {t('breadcrumb')}
           </Link>
           <span className={styles.breadcrumbSeparator}>/</span>
-          <span className={styles.breadcrumbCurrent}>{activity.category}</span>
+          <span className={styles.breadcrumbCurrent}>{translatedCategory}</span>
         </div>
 
         <div className={styles.content}>
-          <span className={styles.category}>{activity.category}</span>
-          <h2 className={styles.title}>{activity.title}</h2>
-          <p className={styles.description}>{activity.description}</p>
+          <span className={styles.category}>{translatedCategory}</span>
+          <h2 className={styles.title}>{translatedTitle}</h2>
+          <p className={styles.description}>{translatedDescription}</p>
         </div>
       </div>
     </section>

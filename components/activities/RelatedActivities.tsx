@@ -12,9 +12,15 @@ interface RelatedActivitiesProps {
 
 export default function RelatedActivities({currentId}: RelatedActivitiesProps) {
   const t = useTranslations('ActivityDetail.related');
+  const tActivities = useTranslations();
 
   // Get related activities from centralized data
   const relatedActivities = getRelatedActivities(currentId, 2);
+
+  // Helper function to translate if needed
+  const translateField = (value: string) => {
+    return value.startsWith('activities.') ? tActivities(value) : value;
+  };
 
   if (relatedActivities.length === 0) {
     return null;
@@ -38,7 +44,7 @@ export default function RelatedActivities({currentId}: RelatedActivitiesProps) {
                 {activity.image ? (
                   <Image
                     src={activity.image}
-                    alt={activity.title}
+                    alt={translateField(activity.title)}
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     style={{ objectFit: 'cover' }}
@@ -67,8 +73,8 @@ export default function RelatedActivities({currentId}: RelatedActivitiesProps) {
                 )}
               </div>
               <div className={styles.cardContent}>
-                <span className={styles.category}>{activity.category}</span>
-                <h3 className={styles.cardTitle}>{activity.title}</h3>
+                <span className={styles.category}>{translateField(activity.category)}</span>
+                <h3 className={styles.cardTitle}>{translateField(activity.title)}</h3>
               </div>
             </Link>
           ))}
