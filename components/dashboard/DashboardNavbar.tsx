@@ -4,7 +4,7 @@ import {useState, useRef, useEffect} from 'react';
 import {Link} from '@/i18n/routing';
 import {useAuth} from '@/contexts/AuthContext';
 import {useTranslations} from 'next-intl';
-import {useMessages} from '@/hooks/useMessages';
+import {useDashboardStats} from '@/hooks/useDashboardStats';
 import LanguageSwitcher from '@/components/layout/LanguageSwitcher';
 import Image from 'next/image';
 import styles from './DashboardNavbar.module.css';
@@ -16,7 +16,7 @@ interface DashboardNavbarProps {
 export default function DashboardNavbar({onMenuToggle}: DashboardNavbarProps) {
   const {user, logout} = useAuth();
   const t = useTranslations('Dashboard');
-  const {messages} = useMessages();
+  const {stats} = useDashboardStats();
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
   const userMenuRef = useRef<HTMLDivElement>(null);
 
@@ -37,8 +37,8 @@ export default function DashboardNavbar({onMenuToggle}: DashboardNavbarProps) {
     setIsUserMenuOpen(false);
   };
 
-  // Count unread messages (status: 'new')
-  const unreadCount = messages.filter(msg => msg.status === 'new').length;
+  // Get unread count from dashboard stats
+  const unreadCount = stats?.messages.new || 0;
 
   return (
     <nav className={styles.navbar}>

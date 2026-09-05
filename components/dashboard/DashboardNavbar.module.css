@@ -1,17 +1,18 @@
 .navbar {
-  background-color: #ffffff;
+  background-color: var(--color-light-cream);
   border-bottom: 1px solid var(--border-color);
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.03);
+  backdrop-filter: blur(8px);
 }
 
 .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.75rem 2rem;
+  padding: 1rem 2.5rem;
   gap: 2rem;
   max-width: 100%;
 }
@@ -80,37 +81,43 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   border: none;
   background: transparent;
   color: var(--color-dark-olive);
   border-radius: var(--border-radius-sm);
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   text-decoration: none;
 }
 
 .iconButton:hover {
-  background-color: var(--color-light-cream);
+  background-color: rgba(131, 157, 120, 0.12);
   color: var(--color-muted-green);
+  transform: translateY(-2px);
+}
+
+.iconButton:active {
+  transform: translateY(0);
 }
 
 .badge {
   position: absolute;
-  top: 4px;
-  right: 4px;
-  min-width: 18px;
-  height: 18px;
-  padding: 0 4px;
-  background-color: #e63946;
+  top: 6px;
+  right: 6px;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 5px;
+  background: linear-gradient(135deg, #e63946, #d62828);
   color: white;
   font-size: 0.7rem;
   font-weight: 700;
-  border-radius: 9px;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 2px 8px rgba(230, 57, 70, 0.3);
 }
 
 [dir="rtl"] .badge {
@@ -123,21 +130,27 @@
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  padding: 0.5rem 0.75rem;
   border: none;
-  background: transparent;
-  border-radius: var(--border-radius-sm);
+  border-radius: 99px;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .userButton:hover {
-  background-color: var(--color-light-cream);
+  transform: translateY(-2px);
+}
+
+.userButton:hover .avatar {
+  box-shadow: 0 4px 12px rgba(131, 157, 120, 0.3);
+}
+
+.userButton:active {
+  transform: translateY(0);
 }
 
 .avatar {
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   background: linear-gradient(135deg, var(--color-muted-green), var(--color-dark-olive));
   color: white;
@@ -145,8 +158,9 @@
   align-items: center;
   justify-content: center;
   font-weight: 700;
-  font-size: 0.95rem;
+  font-size: 1rem;
   flex-shrink: 0;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .userInfo {
@@ -193,16 +207,16 @@
 
 .dropdownMenu {
   position: absolute;
-  top: calc(100% + 0.5rem);
+  top: calc(100% + 0.75rem);
   right: 0;
-  min-width: 280px;
-  background: white;
+  min-width: 300px;
+  background: var(--color-light-cream);
   border: 1px solid var(--border-color);
-  border-radius: var(--border-radius-sm);
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-  padding: 0.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  padding: 0.75rem;
   z-index: 1000;
-  animation: slideDown 0.2s ease-out;
+  animation: slideDown 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 [dir="rtl"] .dropdownMenu {
@@ -213,7 +227,7 @@
 @keyframes slideDown {
   from {
     opacity: 0;
-    transform: translateY(-10px);
+    transform: translateY(-15px);
   }
   to {
     opacity: 1;
@@ -256,15 +270,15 @@
   display: flex;
   align-items: center;
   gap: 1rem;
-  padding: 1rem;
-  background: linear-gradient(135deg, rgba(131, 157, 120, 0.1), rgba(62, 80, 58, 0.05));
-  border-radius: 8px;
-  margin-bottom: 0.5rem;
+  padding: 1.25rem;
+  background: linear-gradient(135deg, rgba(131, 157, 120, 0.15), rgba(62, 80, 58, 0.08));
+  border-radius: var(--border-radius-sm);
+  margin-bottom: 0.75rem;
 }
 
 .avatarLarge {
-  width: 48px;
-  height: 48px;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
   background: linear-gradient(135deg, var(--color-muted-green), var(--color-dark-olive));
   color: white;
@@ -272,8 +286,9 @@
   align-items: center;
   justify-content: center;
   font-weight: 700;
-  font-size: 1.25rem;
+  font-size: 1.35rem;
   flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(131, 157, 120, 0.3);
 }
 
 .userDetails {
@@ -282,8 +297,9 @@
 }
 
 .userMenuName {
+  font-family: var(--font-display);
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 1.05rem;
   color: var(--color-dark-olive);
   margin-bottom: 0.25rem;
   white-space: nowrap;
@@ -292,7 +308,7 @@
 }
 
 .userMenuEmail {
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   color: var(--color-muted-green);
   white-space: nowrap;
   overflow: hidden;
@@ -310,17 +326,18 @@
   align-items: center;
   gap: 0.75rem;
   width: 100%;
-  padding: 0.75rem 1rem;
+  padding: 0.875rem 1.125rem;
   border: none;
   background: transparent;
   color: var(--color-dark-olive);
   font-family: var(--font-body);
-  font-size: 0.95rem;
+  font-size: 1rem;
+  font-weight: 500;
   text-align: left;
   text-decoration: none;
   cursor: pointer;
-  border-radius: 8px;
-  transition: all 0.2s;
+  border-radius: var(--border-radius-sm);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 [dir="rtl"] .menuItem {
@@ -328,8 +345,21 @@
 }
 
 .menuItem:hover {
-  background-color: var(--color-light-cream);
+  background: linear-gradient(135deg, rgba(131, 157, 120, 0.15), rgba(131, 157, 120, 0.08));
   color: var(--color-muted-green);
+  transform: translateX(4px);
+}
+
+[dir="rtl"] .menuItem:hover {
+  transform: translateX(-4px);
+}
+
+.menuItem:active {
+  transform: translateX(2px);
+}
+
+[dir="rtl"] .menuItem:active {
+  transform: translateX(-2px);
 }
 
 .menuItem svg {

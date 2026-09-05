@@ -2,8 +2,10 @@
 
 import {useMemo, useState} from 'react';
 import {tableFeatures, useTable} from '@tanstack/react-table';
+import {useQueryClient} from '@tanstack/react-query';
 import type {ColumnDef} from '@tanstack/react-table';
 import type {Contact} from '@/db/schema';
+import type {DashboardStats} from '@/lib/api/stats';
 import {StatusBadge} from '@/components/ui/StatusBadge';
 import {MessageDetailModal} from './MessageDetailModal';
 import sharedStyles from '@/styles/shared-table.module.css';
@@ -14,17 +16,44 @@ const features = tableFeatures({});
 
 interface MessagesTableProps {
   messages: Contact[];
-  onStatusUpdate?: (id: number, status: 'new' | 'read' | 'replied') => void;
+  onStatusUpdate?: (id: number, status: 'new' | 'read' | 'replied') => Promise<void>;
 }
 
 export function MessagesTable({messages, onStatusUpdate}: MessagesTableProps) {
+  const queryClient = useQueryClient();
   const [selectedMessage, setSelectedMessage] = useState<Contact | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const handleViewMessage = (message: Contact) => {
+  const handleViewMessage = async (message: Contact) => {
     // Mark as read if it's currently 'new'
     if (message.status === 'new' && onStatusUpdate) {
-      onStatusUpdate(message.id, 'read');
+      // Store the previous stats for potential rollback
+      const previousStats = queryClient.getQueryData<DashboardStats>(['dashboardStats']);
+      
+      // Optimistically update the dashboard stats
+      queryClient.setQueryData<DashboardStats>(['dashboardStats'], (old) => {
+        if (!old) return old;
+        return {
+          ...old,
+          messages: {
+            ...old.messages,
+            new: Math.max(0, old.messages.new - 1),
+            read: old.messages.read + 1,
+          }
+        };
+      });
+
+      try {
+        // Update the message status
+        await onStatusUpdate(message.id, 'read');
+        
+        // Invalidate to ensure data consistency with the server
+        queryClient.invalidateQueries({ queryKey: ['dashboardStats'] });
+      } catch (error) {
+        // Revert optimistic update on failure
+        queryClient.setQueryData(['dashboardStats'], previousStats);
+        console.error('Failed to update message status:', error);
+      }
     }
     
     setSelectedMessage(message);

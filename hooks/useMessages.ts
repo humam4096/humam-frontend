@@ -1,6 +1,5 @@
 import {useQuery, useMutation, useQueryClient} from '@tanstack/react-query';
 import {messagesApi} from '@/lib/api/messages';
-import type {Contact} from '@/db/schema';
 
 export function useMessages() {
   const queryClient = useQueryClient();
@@ -18,8 +17,8 @@ export function useMessages() {
     },
   });
 
-  const updateStatus = (id: number, status: 'new' | 'read' | 'replied') => {
-    updateStatusMutation.mutateAsync({ id, status });
+  const updateStatus = async (id: number, status: 'new' | 'read' | 'replied') => {
+    await updateStatusMutation.mutateAsync({ id, status });
   };
 
   return {

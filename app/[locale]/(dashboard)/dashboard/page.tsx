@@ -1,35 +1,12 @@
 'use client';
 
 import {useAuth} from '@/contexts/AuthContext';
-import {useEffect, useState} from 'react';
-import {statsApi, type DashboardStats} from '@/lib/api/stats';
+import {useDashboardStats} from '@/hooks/useDashboardStats';
 import styles from './DashboardOverview.module.css';
 
 export default function DashboardOverview() {
   const {user, loading: authLoading} = useAuth();
-  const [stats, setStats] = useState<DashboardStats | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-
-  const fetchStats = async () => {
-    try {
-      setLoading(true);
-      setError(null);
-      const data = await statsApi.getDashboard();
-      setStats(data);
-    } catch (err) {
-      console.error('Failed to fetch dashboard stats:', err);
-      setError('Failed to load dashboard statistics');
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    if (!authLoading) {
-      fetchStats();
-    }
-  }, [authLoading]);
+  const {stats, loading, error, refetch} = useDashboardStats();
 
   if (authLoading || loading) {
     return (
@@ -44,7 +21,7 @@ export default function DashboardOverview() {
       <div className={styles.errorState}>
         <div className={styles.errorIcon}>⚠️</div>
         <div className={styles.errorText}>{error}</div>
-        <button onClick={fetchStats} className={styles.retryButton}>
+        <button onClick={() => refetch()} className={styles.retryButton}>
           Retry
         </button>
       </div>
