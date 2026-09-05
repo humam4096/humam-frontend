@@ -560,7 +560,7 @@
           "description": "Catering services providing high-quality meals and food support for the Chefs of the Guests of Allah."
         },
         "hajj": {
-          "title": "Large-Scale Hajj Catering",
+          "title": "Hajj Catering Operations",
           "category": "Operations",
           "description": "High-volume catering operations for the Hajj season with exceptional quality and safety standards."
         }
@@ -579,7 +579,7 @@
       "location": "Location"
     },
     "related": {
-      "title": "More Projects",
+      "title": "More Activities",
       "activities": {
         "factory": {
           "title": "Food Factory Quality System",
@@ -590,6 +590,18 @@
           "category": "Training"
         }
       }
+    }
+  },
+  "activities": {
+    "hajjCatering": {
+      "title": "Hajj Catering Operations",
+      "category": "Operations & Catering",
+      "description": "High-volume catering operations for the Hajj season with exceptional quality and safety standards. Managing thousands of meals daily with precision logistics and food safety compliance."
+    },
+    "jadaThoon": {
+      "title": "Easha Thoon Hackathon",
+      "category": "Hackathons & Innovation",
+      "description": "THOON’s participation in the Easha Thoon Hackathon, bringing together innovators and specialists to develop innovative ideas and solutions that contribute to advancing the catering sector and enhancing services for the Guests of Allah."
     }
   },
   "LoginPage": {
@@ -612,5 +624,15 @@
       "contact": "Need access?",
       "contactLink": "Contact us"
     }
+  },
+  "Dashboard": {
+    "searchPlaceholder": "Search...",
+    "notifications": "Notifications",
+    "markAllRead": "Mark all read",
+    "noNotifications": "No notifications",
+    "dashboard": "Dashboard",
+    "profile": "Profile",
+    "settings": "Settings",
+    "logout": "Logout"
   }
 }

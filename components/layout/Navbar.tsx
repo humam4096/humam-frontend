@@ -14,7 +14,6 @@ export default function Navbar() {
   const {user, logout} = useAuth();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
 
   // Handle scroll events for dynamic border
   useEffect(() => {
@@ -46,7 +45,6 @@ export default function Navbar() {
 
   const handleLogout = async () => {
     await logout();
-    setIsUserMenuOpen(false);
     setIsMenuOpen(false);
   };
 
@@ -125,38 +123,14 @@ export default function Navbar() {
           
           {user ? (
             <div className={styles.userMenu}>
-              <button 
+              <Link
+              href={'/dashboard'} 
                 className={styles.userButton}
-                onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
+                onClick={() => navigator}
                 aria-label="User menu"
-                aria-expanded={isUserMenuOpen}
               >
                 <span className={styles.userName}>{user.name}</span>
-              </button>
-              
-              {isUserMenuOpen && (
-                <>
-                  <div 
-                    className={styles.userMenuOverlay} 
-                    onClick={() => setIsUserMenuOpen(false)}
-                  />
-                  <div className={styles.userMenuDropdown}>
-                    <Link 
-                      href="/dashboard" 
-                      className={styles.userMenuItem}
-                      onClick={() => setIsUserMenuOpen(false)}
-                    >
-                      {t('dashboard')}
-                    </Link>
-                    <button 
-                      className={styles.userMenuItem}
-                      onClick={handleLogout}
-                    >
-                      {t('logout')}
-                    </button>
-                  </div>
-                </>
-              )}
+              </Link>
             </div>
           ) : (
             <Link href="/login" className={styles.loginButton}>

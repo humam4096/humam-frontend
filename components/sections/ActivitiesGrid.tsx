@@ -10,6 +10,7 @@ import {getActivityListItems, type ActivityListItem} from '@/data/activities';
 
 export default function ActivitiesGrid() {
   const t = useTranslations('ActivitiesPage.grid');
+  const tActivities = useTranslations();
 
   const containerVariants = {
     hidden: {opacity: 0},
@@ -36,6 +37,11 @@ export default function ActivitiesGrid() {
   // Get activities from centralized data
   const activities: ActivityListItem[] = getActivityListItems();
 
+  // Helper function to translate if needed
+  const translateField = (value: string) => {
+    return value.startsWith('activities.') ? tActivities(value) : value;
+  };
+
   return (
     <section className={styles.gridSection}>
       <div className="container">
@@ -57,7 +63,7 @@ export default function ActivitiesGrid() {
                 <div className={styles.cardBackground}>
                   <Image
                     src={activity.image}
-                    alt={activity.title}
+                    alt={translateField(activity.title)}
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     style={{ objectFit: 'cover' }}
@@ -75,9 +81,9 @@ export default function ActivitiesGrid() {
                   <BrandStar fill="var(--color-brand-mustard)" />
                 </div>
                 <div className={styles.cardContent}>
-                  <span className={styles.category}>{activity.category}</span>
-                  <h3 className={styles.cardTitle}>{activity.title}</h3>
-                  <p className={styles.cardDescription}>{activity.description}</p>
+                  <span className={styles.category}>{translateField(activity.category)}</span>
+                  <h3 className={styles.cardTitle}>{translateField(activity.title)}</h3>
+                  <p className={styles.cardDescription}>{translateField(activity.description)}</p>
                 </div>
                 <div className={styles.cardHoverAccent}></div>
               </motion.div>

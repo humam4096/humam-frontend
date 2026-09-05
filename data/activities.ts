@@ -40,9 +40,9 @@ const DEFAULT_BLUR_DATA_URL =
 export const activities: Record<string, Activity> = {
   'hajj-catering': {
     id: 'hajj-catering',
-    title: 'Large-Scale Hajj Catering Operations',
-    category: 'Operations & Catering',
-    description: 'High-volume catering operations for the Hajj season with exceptional quality and safety standards. Managing thousands of meals daily with precision logistics and food safety compliance.',
+    title: 'activities.hajjCatering.title',
+    category: 'activities.hajjCatering.category',
+    description: 'activities.hajjCatering.description',
     year: '2024',
     client: 'Hajj Services Provider',
     location: 'Makkah, Saudi Arabia',
@@ -66,9 +66,9 @@ export const activities: Record<string, Activity> = {
   },
   'jada-thoon': {
     id: 'jada-thoon',
-    title: 'THOON Catering Services',
-    category: 'Catering & Food Services',
-    description: 'Specialized catering services providing high-quality meals and comprehensive food support for the Chefs of the Guests of Allah, with a strong focus on quality, food safety, operational efficiency, and reliable service.',
+    title: 'activities.jadaThoon.title',
+    category: 'activities.jadaThoon.category',
+    description: 'activities.jadaThoon.description',
     year: '2024',
     client: 'THOON Catering',
     location: 'Makkah, Saudi Arabia',
@@ -84,7 +84,7 @@ export const activities: Record<string, Activity> = {
       { type: 'image', src: '/images/activities/jada-hakathon/jada-hakathon4.webp', alt: 'Meal packaging', layout: 'split-right' },
       { type: 'image', src: '/images/activities/jada-hakathon/jada-hakathon5.webp', alt: 'Final inspection', layout: 'full' },
     ],
-  },
+  }
 };
 
 // Helper Functions
