@@ -437,7 +437,7 @@
 }
 
 .userButton:hover {
-  background-color: var(--color-brand-olive);
+  background-color: var(--color-brand-dark-olive);
   color: var(--color-light-cream);
 }
 
@@ -464,7 +464,7 @@
   top: calc(100% + 0.5rem);
   right: 0;
   min-width: 180px;
-  background-color: var(--color-white);
+  background-color: var(--color-brand-cream);
   border: 1px solid var(--border-color);
   border-radius: 12px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
@@ -542,6 +542,7 @@
 }
 
 .mobileUserDetails {
+  
   display: flex;
   flex-direction: column;
   gap: 0.25rem;

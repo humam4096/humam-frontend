@@ -8,7 +8,7 @@
   font-size: 1rem;
   font-weight: 500;
   cursor: pointer;
-  border: 1px solid rgba(131, 157, 120, 0.4);
+  border: none;
   /* Brand Green subtle border */
   padding: 0.4rem 0.8rem;
   border-radius: 99px;
@@ -17,9 +17,9 @@
 }
 
 .button:hover:not(:disabled) {
-  background-color: var(--color-brand-green);
-  color: var(--color-brand-cream);
-  border-color: var(--color-brand-green);
+  /* background-color: var(--color-dark-olive); */
+  /* border-color: var(--color-brand-green); */
+  color: var(--color-brand-green);
 }
 
 .button:disabled {

@@ -616,5 +616,15 @@
       "contact": "تحتاج إلى الوصول؟",
       "contactLink": "تواصل معنا"
     }
+  },
+  "Dashboard": {
+    "searchPlaceholder": "بحث...",
+    "notifications": "الإشعارات",
+    "markAllRead": "تحديد الكل كمقروء",
+    "noNotifications": "لا توجد إشعارات",
+    "dashboard": "لوحة التحكم",
+    "profile": "الملف الشخصي",
+    "settings": "الإعدادات",
+    "logout": "تسجيل الخروج"
   }
 }

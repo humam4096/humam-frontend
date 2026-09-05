@@ -3,8 +3,14 @@
 import {Link, usePathname} from '@/i18n/routing';
 import {useAuth} from '@/contexts/AuthContext';
 import styles from './Sidebar.module.css';
+import Image from 'next/image';
 
-export default function Sidebar() {
+interface SidebarProps {
+  isOpen?: boolean;
+  onClose?: () => void;
+}
+
+export default function Sidebar({isOpen, onClose}: SidebarProps) {
   const {user, loading} = useAuth();
   const pathname = usePathname();
 
@@ -18,11 +24,26 @@ export default function Sidebar() {
 
   const visibleLinks = links.filter((link) => user?.role && link.roles.includes(user.role));
 
+  const handleLinkClick = () => {
+    // Close sidebar on mobile when a link is clicked
+    if (onClose) {
+      onClose();
+    }
+  };
+
   return (
-    <aside className={styles.sidebar}>
+    <aside className={`${styles.sidebar} ${isOpen ? styles.open : ''}`}>
       <div className={styles.brand}>
-        <h2>HUMAM</h2>
-        <span className={styles.roleBadge}>{user?.role}</span>
+        <Link href="/" style={{display: "flex", justifyItems: 'center', alignItems: 'center'}}>
+          <Image
+            src="/images/brand/Humam-Logo-Short.svg"
+            alt="Humam Logo"
+            width={40}
+            height={40}
+            priority
+          />
+          <span style={{fontWeight: 600}}>HUMAM</span>
+        </Link>
       </div>
 
       <nav className={styles.nav}>
@@ -33,6 +54,7 @@ export default function Sidebar() {
               key={link.href}
               href={link.href}
               className={`${styles.link} ${isActive ? styles.active : ''}`}
+              onClick={handleLinkClick}
             >
               {link.label}
             </Link>

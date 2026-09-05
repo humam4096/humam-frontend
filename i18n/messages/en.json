@@ -612,5 +612,15 @@
       "contact": "Need access?",
       "contactLink": "Contact us"
     }
+  },
+  "Dashboard": {
+    "searchPlaceholder": "Search...",
+    "notifications": "Notifications",
+    "markAllRead": "Mark all read",
+    "noNotifications": "No notifications",
+    "dashboard": "Dashboard",
+    "profile": "Profile",
+    "settings": "Settings",
+    "logout": "Logout"
   }
 }
