@@ -5,12 +5,9 @@ import {notFound} from 'next/navigation';
 import {Outfit, Inter, Tajawal} from 'next/font/google';
 import {AuthProvider} from '@/contexts/AuthContext';
 import {QueryProvider} from '@/providers/QueryProvider';
-import Navbar from '@/components/layout/Navbar';
-import Footer from '@/components/layout/Footer';
 import PageTransition from '@/components/layout/PageTransition';
 import GoogleAnalytics from '@/components/analytics/GoogleAnalytics';
 import PageViewTracker from '@/components/analytics/PageViewTracker';
-import ConditionalFooter from '@/components/layout/ConditionalFooter';
 import '../globals.css';
 
 const inter = Inter({
@@ -87,11 +84,9 @@ export default async function LocaleLayout({
           <QueryProvider>
             <AuthProvider>
               <PageViewTracker />
-              <Navbar />
               <PageTransition>
                 {children}
               </PageTransition>
-              <ConditionalFooter />
             </AuthProvider>
           </QueryProvider>
         </NextIntlClientProvider>
